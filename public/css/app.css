@@ -89,12 +89,12 @@ html {
 
 .title#location {
 	position: relative;
-	top: 30%;
+	top: 40%;
 }
 
 .title#date {
 	position: relative;
-	top: 30%;
+	top: 40%;
 }
 
 .btn {
@@ -103,7 +103,7 @@ html {
 	border-radius: 0;
 	border: 5px solid #F3F0F0;
 	color: #F3F0F0;
-	background-color: rgba(65, 65, 67, .5);
+	background-color: rgba(65, 65, 67, .7);
 	transition: all 1s;
 	-webkit-transition: all 1s;
 }
@@ -117,4 +117,24 @@ html {
 	position: relative;
 	top: 20%;
 	font-size: 20px;
+}
+
+@media(max-width: 767px) {
+	.title {
+		font-size: 27px;
+	}
+
+	#join-us {
+		font-size: 17px;
+	}
+}
+
+@media(max-width: 480px) {
+	.title {
+		font-size: 20px;
+	}
+
+	/*#join-us {
+		font-size: 13px;
+	}*/
 }
