@@ -1,3 +1,120 @@
-body {
-	background-color: blue;
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+@font-face {
+	font-family: fadedBlockStyle; /*KG all of me*/
+	src: url(../fonts/KGAllofMe.ttf);
+}
+
+@font-face {
+	font-family: regularSkinnyCases; /* Aaargh */
+	src: url(../fonts/Aaargh.ttf);
+}
+
+@font-face {
+	font-family: thinUpperCases; /* Neoteric */
+	src: url(../fonts/NEOTERIC_Regular.ttf);
+}
+
+@font-face {
+	font-family: thinUpperCases; /* Neoteric */
+	src: url(../fonts/NEOTERIC_Bold.ttf);
+	font-weight: bold;
+}
+
+/*
+------- COLORS --------
+Grays:
+	off-white: #F3F0F0 , rgb(243, 240, 240)
+	gray: #9A9899
+	dark-gray: #414143 , rgb(65, 65, 67)
+
+Sages:
+	light: #9ACEC1
+	dark: #68968E
+
+Coral: #FF776F
+
+Light Blue: #A1DBFF
+
+Gold gradient: linear-gradient(to bottom, #fbc926 0%,#f2d293 34%,#c3922e 100%)
+
+-----------------------
+*/
+
+html { 
+  background: url("../img/marina.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+#border.container-fluid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: regularSkinnyCases;
+	font-weight: normal;
+	color: #414143;
+	border: 10px solid #F3F0F0;
+	margin: 3.5%;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+.inner-container {
+	height: 50%;
+	width: 100%;
+}
+
+#logo {
+	position: relative;
+	font-family: fadedBlockStyle;
+	font-weight: 100;
+	top: 2%;
+	font-size: 20px;
+}
+
+.title {
+	letter-spacing: 7px;
+}
+
+.title#location {
+	position: relative;
+	top: 30%;
+}
+
+.title#date {
+	position: relative;
+	top: 30%;
+}
+
+.btn {
+	text-transform: uppercase;
+	padding: 2% 10%;
+	border-radius: 0;
+	border: 5px solid #F3F0F0;
+	color: #F3F0F0;
+	background-color: rgba(65, 65, 67, .5);
+	transition: all 1s;
+	-webkit-transition: all 1s;
+}
+
+.btn:hover {
+	color: #F3F0F0;
+	background: #68968E;
+}
+
+#join-us {
+	position: relative;
+	top: 20%;
+	font-size: 20px;
 }
