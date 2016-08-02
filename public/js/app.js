@@ -1,1 +1,5 @@
-console.log("app.js hit");
+window.onload = function () {
+
+	console.log("app.js hit");
+
+}

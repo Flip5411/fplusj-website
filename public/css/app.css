@@ -43,13 +43,25 @@ Gold gradient: linear-gradient(to bottom, #fbc926 0%,#f2d293 34%,#c3922e 100%)
 -----------------------
 */
 
-html { 
-  background: url("../img/marina.jpg") no-repeat center center fixed; 
+html {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+body {
+  background-image: url("../img/marina.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+
 
 
 #border.container-fluid {
@@ -119,7 +131,7 @@ html {
 	font-size: 20px;
 }
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
 	.title {
 		font-size: 27px;
 	}
@@ -129,12 +141,8 @@ html {
 	}
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
 	.title {
-		font-size: 20px;
+		font-size: 15px;
 	}
-
-	/*#join-us {
-		font-size: 13px;
-	}*/
 }
