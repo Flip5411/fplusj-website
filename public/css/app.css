@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* ---- FONTS ----- */
 @font-face {
 	font-family: fadedBlockStyle; /*KG all of me*/
 	src: url(../fonts/KGAllofMe.ttf);
@@ -50,8 +51,9 @@ html {
 	left: 0;
 }
 
+/* ---- MAIN ----- */
 body {
-  background-image: url("../img/marina.jpg");
+  background-image: url("../img/marina-resized.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -61,10 +63,7 @@ body {
   background-size: cover;
 }
 
-
-
-
-#border.container-fluid {
+#main-border {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -99,38 +98,124 @@ body {
 	letter-spacing: 7px;
 }
 
-.title#location {
+#location, #date {
 	position: relative;
 	top: 40%;
 }
 
-.title#date {
-	position: relative;
-	top: 40%;
-}
-
-.btn {
+.btn, .btn:focus, .btn:active, .btn:hover {
 	text-transform: uppercase;
-	padding: 2% 10%;
 	border-radius: 0;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	outline: 0;
 	border: 5px solid #F3F0F0;
 	color: #F3F0F0;
 	background-color: rgba(65, 65, 67, .7);
-	transition: all 1s;
-	-webkit-transition: all 1s;
-}
-
-.btn:hover {
-	color: #F3F0F0;
-	background: #68968E;
 }
 
 #join-us {
 	position: relative;
 	top: 20%;
 	font-size: 20px;
+	padding: 2% 10%;
 }
 
+#join-us:hover {
+	color: #F3F0F0;
+	background: #68968E;
+}
+
+/* ---- MODAL ----- */
+.modal-content {
+	border-radius: 0;
+	background-color: #414143;
+	color: #F3F0F0;
+	font-family: regularSkinnyCases;
+}
+
+#modal-border {
+	border: 10px solid #F3F0F0;
+	margin: 3.5%;
+}
+
+.modal-header, .modal-footer {
+	border: none;
+}
+
+.modal-header h4 {
+	font-family: fadedBlockStyle;
+	font-size: 35px;
+	font-weight: 100;
+}
+
+button.close {
+	position: relative;
+	color: #F3F0F0;
+	font-size: 50px;
+	top: -20px;
+	right: -20px;
+	opacity: 1;
+}
+
+.modal-body label {
+	font-family: thinUpperCases;
+	font-size: 30px;
+	font-weight: 100;
+}
+
+.modal-body button:hover, .modal-body .btn-active {
+	background-color: #F3F0F0;
+	color: #414343;
+}
+
+.form-control {
+	margin-bottom: 1%;
+	background-color: #F3F0F0;
+	border-radius: 0;
+}
+
+.form-name {
+	width: 49.5%;
+}
+
+#form-firstname {
+	margin-right: 1%;
+}
+
+.form-address {
+	display: none;
+}
+
+#form-city {
+	width: 77%;
+	margin-right: 1%;
+}
+
+#form-state {
+	width: 22%;
+}
+
+#send-btn {
+	padding: 10px 60px;
+}
+
+#send-btn:hover {
+	background-color: #FF776F;
+}
+
+/* FOR VALIDATION STYLING
+input:required:invalid, input:focus:invalid {
+  insert your own styles for invalid form input
+  -moz-box-shadow: none;
+}
+
+input:required:valid {
+  insert your own styles for valid form input
+}
+*/
+
+/* ---- MOBILE MEDIA QUERIES ----- */
 @media (max-width: 767px) {
 	.title {
 		font-size: 27px;
