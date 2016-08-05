@@ -117,7 +117,7 @@ body {
 #join-us {
 	position: relative;
 	top: 20%;
-	font-size: 20px;
+	font-size: 30px;
 	padding: 2% 10%;
 }
 
@@ -127,6 +127,10 @@ body {
 }
 
 /* ---- MODAL ----- */
+#guestForm {
+	position: absolute;
+}
+
 .modal-content {
 	border-radius: 0;
 	background-color: #414143;
@@ -145,7 +149,7 @@ body {
 
 .modal-header h4 {
 	font-family: fadedBlockStyle;
-	font-size: 35px;
+	font-size: 30px;
 	font-weight: 100;
 }
 
@@ -158,6 +162,7 @@ button.close {
 	opacity: 1;
 }
 
+/* Modal form */
 .modal-body label {
 	font-family: thinUpperCases;
 	font-size: 30px;
@@ -183,7 +188,7 @@ button.close {
 	margin-right: 1%;
 }
 
-.form-address {
+.dynamic-form {
 	display: none;
 }
 
@@ -196,6 +201,19 @@ button.close {
 	width: 22%;
 }
 
+#user-feedback {
+	text-align: left;
+	display: none;
+}
+
+#user-feedback.negative {
+	color: #FF776F;
+}
+
+#user-feedback.positive {
+	color: #98CeC1;
+}
+
 #send-btn {
 	padding: 10px 60px;
 }
@@ -204,16 +222,41 @@ button.close {
 	background-color: #FF776F;
 }
 
-/* FOR VALIDATION STYLING
-input:required:invalid, input:focus:invalid {
-  insert your own styles for invalid form input
-  -moz-box-shadow: none;
+#send-btn.disabled {
+	background-color: #FF776F;
+	transition: all 1s;
+	-webkit-transition: all 1s;
 }
 
-input:required:valid {
-  insert your own styles for valid form input
+/* VALIDATION STYLING */
+form *:required:invalid, form *:focus:invalid {
+	background-image: url(../img/exclamationmark.png);
+	background-position: 99% 2px;
+	background-repeat: no-repeat;
+	background-size: 15px;
+	-moz-box-shadow: none;
 }
-*/
+
+form *:required:valid {
+	background-image: url(../img/checkmark.png);
+	background-position: 99% 2px;
+	background-repeat: no-repeat;
+	background-size: 15px;
+}
+
+#btn-validation-icon {
+	background-image: url(../img/exclamationmark.png);
+	background-size: 15px;
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+}
+
+#btn-validation-icon.valid {
+	background-image: url(../img/checkmark.png);
+}
+
+
 
 /* ---- MOBILE MEDIA QUERIES ----- */
 @media (max-width: 767px) {
@@ -222,12 +265,42 @@ input:required:valid {
 	}
 
 	#join-us {
-		font-size: 17px;
+		font-size: 24px;
 	}
 }
 
 @media (max-width: 480px) {
 	.title {
-		font-size: 15px;
+		font-size: 12px;
+	}
+
+	#join-us {
+		font-size: 20px;
+	}
+
+	.modal-header h4 {
+		font-size: 25px;
+	}
+
+	.modal-body label {
+		font-size: 20px;
+	}
+
+	.form-control {
+		font-size: 12px;
+	}
+
+	.modal-body button {
+		font-size: 11px;
+		border-width: 2px;
+		padding: 3px 5px;
+	}
+
+	.modal-body button:hover {
+		font-size: 11px;
+		border-width: 2px;
+		padding: 3px 5px;
 	}
 }
+
+

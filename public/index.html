@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="img/creamy-favicon.png">
 		<title>Felipe + Justine</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -21,7 +21,6 @@
 			</div>
 		</div>
 
-<!-- MODAL EXAMPLE FOR TESTING -->
 		<!-- Modal -->
 		<div id="guestForm" class="modal fade" role="dialog">
 		  	<div class="modal-dialog">
@@ -35,35 +34,43 @@
 					    </div>
 					    <div class="modal-body">
 					    	<form role="form">
-					    		<div class="form-group">
+					    		<div class="form-group static-form">
 					    			<label>Identify yourself!</label>
 					    			<br>
 					    			<input type="text" id="form-firstname" class="form-control form-name col-xs-6" placeholder="First Name" required>
-					    			<input type="text" class="form-control form-name col-xs-6" placeholder="Last Name" required>
+					    			<input type="text" id="form-lastname" class="form-control form-name col-xs-6" placeholder="Last Name" required>
 					    		</div>
-					    		<div class="form-group">
+					    		<div class="form-group static-form">
 					    			<label>Electronic-mail</label>
-					    			<input type="email" class="form-control" placeholder="name@email.com" required>
+					    			<input type="email" id="form-email" class="form-control" placeholder="name@email.com" required>
+					    		</div>
+					    		<div class="form-group static-form">
+					    			<label>Mobile</label>
+					    			<input type="tel" id="form-phone" class="form-control" placeholder="Phone number" required>
 					    		</div>
 					    		<div class="form-group">
 					    			<label>Where you at??</label>
 					    			<br>					    	
-				    				<button type="button" id="form-US-btn" class="btn">United States</button>
-				    				<button type="button" id="form-notUS-btn" class="btn">Not U.S.</button>
+				    				<div>
+					    				<button type="button" id="form-US-btn" class="btn">United States</button>
+					    				<button type="button" id="form-notUS-btn" class="btn">Not U.S.</button>
+					    				<div id="btn-validation-icon"></div>
+				    				</div>
 					    		</div>
-					    		<div class="form-group form-address" id="US-address">				    			
-					    			<input type="text" class="form-control" placeholder="Address line 1" required>
-					    			<input type="text" class="form-control" placeholder="Address line 2 (optional)">
+					    		<div class="form-group dynamic-form" id="US-address">				    			
+					    			<input id="form-address1" type="text" class="form-control" placeholder="Address line 1" required>
+					    			<input id="form-address2" type="text" class="form-control" placeholder="Address line 2 (optional)">
 					    			<input id="form-city" type="text" class="form-control col-xs-8" placeholder="City" required>
 					    			<input id="form-state" type="text" class="form-control col-xs-4" placeholder="State" required>
-					    			<input type="text" class="form-control" placeholder="Zip" required>
+					    			<input id="form-zip" type="text" class="form-control" placeholder="Zip" required>
 					    		</div>
-					    		<div class="form-group form-address" id="international-address">
-					    			<textarea class="form-control" placeholder="Full mailing address" required></textarea>			    		
+					    		<div class="form-group dynamic-form" id="international-address">
+					    			<textarea id="form-international-address" rows="5" class="form-control" placeholder="Full mailing address" required ></textarea>	    		
 					    		</div>
 					    	</form>
 					    </div>
-					    <div class="modal-footer">
+					    <div class="modal-footer row">
+					    	<p id="user-feedback" class="col-sm-8"></p>
 					    	<button type="button" id="send-btn" class="btn" data-dismiss="">Send</button>
 					    </div>
 					</div>
@@ -71,7 +78,6 @@
 
 		  	</div>
 		</div>
-<!-- MODAL EXAMPLE FOR TESTING -->
 
 		<script type="text/javascript" src="js/jquery-3.1.0.slim.min.js"></script> <!-- slim version of jquery excludes effects and ajax -->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
