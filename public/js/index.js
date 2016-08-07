@@ -1,4 +1,9 @@
-var guest = {}; // UNIVERSAL(tm) variable for in-browser testing
+// function testPOST() {
+// 	$.post("sendForm", guest, function(data) {
+// 		alert("Client side funtion fired \nFrom server: " + data.name);
+// 		console.log(data);
+// 	});
+// }
 
 window.onload = function () {
 	console.log("app.js hit");
@@ -40,10 +45,6 @@ window.onload = function () {
 		var isDomesticAddress = document.getElementById("form-US-btn").classList.contains("btn-active"); // Boolean
 		var isInternationalAddress = document.getElementById("form-notUS-btn").classList.contains("btn-active"); // Boolean
 
-		var isValid_staticForms;
-		var isValid_domesticForms;
-		var isValid_internationalForms;
-
 		function validateForm(formArray) {
 			for (var i = 0; i < formArray.length; i++) {
 				if (formArray[i].checkValidity() === false) {
@@ -53,12 +54,9 @@ window.onload = function () {
 			return true;
 		}
 
-		function checkForms() {
-			isValid_staticForms = validateForm(staticForms);
-			isValid_domesticForms = validateForm(domesticForms);
-			isValid_internationalForms = validateForm(internationalForms);
-		}
-		checkForms();
+		var isValid_staticForms = validateForm(staticForms);
+		var isValid_domesticForms = validateForm(domesticForms);
+		var isValid_internationalForms = validateForm(internationalForms);
 
 		// if invalid - tell user
 		function throwError() {
@@ -74,7 +72,7 @@ window.onload = function () {
 
 		// if valid - handle guest info:
 		function createGuest() {
-			guest = { // if i remove guest from grobal, need to declare var here
+			var guest = { // if i remove guest from grobal, need to declare var here
 				firstName: document.getElementById("form-firstname").value,
 				lastName: document.getElementById("form-lastname").value,
 				email: document.getElementById("form-email").value,
@@ -103,14 +101,16 @@ window.onload = function () {
 			userFeedback.innerHTML = "";
 			userFeedback.classList.remove("negative");
 			userFeedback.classList.add("positive");
-			setTimeout(function() {
-				userFeedback.innerHTML = "SUCCESS!! We got your info...now just watch your mail and stay tuned for more info!";
-				userFeedback.style.display = "block";
-			}, 100); // delay so looks like something changed if user gets same message
-			console.log("guest created successfully");
-			sendBtn.classList.add("disabled");
-			sendBtn.disabled = true;
-			return;
+			userFeedback.style.display = "block";
+			userFeedback.innerHTML = "Sending your info...";
+
+			$.post("sendForm", guest, function(data) {				
+				userFeedback.innerHTML = "SUCCESS!! We got your info, " + data.firstName + "...now just watch your mail and stay tuned for more info!";
+				console.log("guest created successfully in the server!");
+				sendBtn.classList.add("disabled");
+				sendBtn.disabled = true;
+				// WHAT IF SOMETHING FUCKS UP ON THE SERVER SIDE? HOW DO I SEND THE USER A MESSAGE?
+			});
 		}
 
 		// test logic - decide which func to run

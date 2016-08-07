@@ -65,6 +65,7 @@ body {
 
 #main-border {
 	position: absolute;
+	padding: 0;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -86,12 +87,14 @@ body {
 	width: 100%;
 }
 
-#logo {
+.logo {
 	position: relative;
 	font-family: fadedBlockStyle;
 	font-weight: 100;
 	top: 2%;
 	font-size: 20px;
+	width: 100%;
+	text-align: center;
 }
 
 .title {
@@ -126,6 +129,17 @@ body {
 	background: #68968E;
 }
 
+.footer-tag {
+	color: #F3F0F0;
+	font-family: thinUpperCases;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+}
+
 /* ---- MODAL ----- */
 #guestForm {
 	position: absolute;
@@ -143,8 +157,16 @@ body {
 	margin: 3.5%;
 }
 
+.modal-content .logo {
+	font-size: 15px;
+}
+
 .modal-header, .modal-footer {
 	border: none;
+}
+
+.modal-header {
+	border-top: 2px solid #525254;
 }
 
 .modal-header h4 {
@@ -157,7 +179,7 @@ button.close {
 	position: relative;
 	color: #F3F0F0;
 	font-size: 50px;
-	top: -20px;
+	top: -60px;
 	right: -20px;
 	opacity: 1;
 }
@@ -256,7 +278,13 @@ form *:required:valid {
 	background-image: url(../img/checkmark.png);
 }
 
-
+.modal-content .footer-tag {
+	position: relative;
+	margin: 0;
+	padding: 5px;
+	border-top: 2px solid #525254;
+	font-size: 15px;
+}
 
 /* ---- MOBILE MEDIA QUERIES ----- */
 @media (max-width: 767px) {
@@ -296,7 +324,7 @@ form *:required:valid {
 		padding: 3px 5px;
 	}
 
-	.modal-body button:hover {
+	.modal-body button:hover, .modal-body .btn-active {
 		font-size: 11px;
 		border-width: 2px;
 		padding: 3px 5px;

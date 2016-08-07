@@ -1,12 +1,22 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 3000;
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.use("/", express.static(__dirname + "/public"));
-console.log("Root directory is: " + __dirname + "/public");
+
+// TESTING POST REQUEST
+app.post("/sendForm", function(req, res) {
+	var guestInfo = req.body;
+	console.log("Server got: " + guestInfo.JSON);
+	res.send(guestInfo);
+});
 
 app.get('/*', function(req, res){
-  res.sendFile(__dirname + '/public/index.html');
+  res.redirect("/");
 });
 
 app.listen(PORT, function () {
