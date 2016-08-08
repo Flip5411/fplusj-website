@@ -305,7 +305,8 @@ form *:required:valid {
 
 @media (max-width: 480px) {
 	.title {
-		font-size: 12px;
+		font-size: 18px;
+		font-weight: 400;
 	}
 
 	#join-us {

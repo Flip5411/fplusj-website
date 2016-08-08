@@ -86,7 +86,7 @@ window.onload = function () {
 				var	city = document.getElementById("form-city").value;
 				var	state = document.getElementById("form-state").value;
 				var	zip = document.getElementById("form-zip").value;
-				guest.address = line1 + "\n" + line2 + "\n" + city  + ", " + state + " " + zip;
+				guest.address = line1 + ", " + line2 + "\n" + city  + ", " + state + " " + zip;
 				guest.JSON = JSON.stringify(guest);
 			} else {
 				guest.country = "International";
