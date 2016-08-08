@@ -80,21 +80,17 @@ window.onload = function () {
 			};
 			
 			if (isDomesticAddress) {
-				guest.address = {
-					type: "Domestic",
-					country: "United States",
-					line1: document.getElementById("form-address1").value,
-					line2: document.getElementById("form-address2").value,
-					city: document.getElementById("form-city").value,
-					state: document.getElementById("form-state").value,
-					zip: document.getElementById("form-zip").value
-				};
+				guest.country = "United States";
+				var line1 = document.getElementById("form-address1").value;
+				var line2 = document.getElementById("form-address2").value;
+				var	city = document.getElementById("form-city").value;
+				var	state = document.getElementById("form-state").value;
+				var	zip = document.getElementById("form-zip").value;
+				guest.address = line1 + "\n" + line2 + "\n" + city  + ", " + state + " " + zip;
 				guest.JSON = JSON.stringify(guest);
 			} else {
-				guest.address = {
-					type: "international",
-					fullAddress: document.getElementById("form-international-address").value
-				};
+				guest.country = "International";
+				guest.address = document.getElementById("form-international-address").value;
 				guest.JSON = JSON.stringify(guest);
 			}
 			// success message
@@ -102,14 +98,22 @@ window.onload = function () {
 			userFeedback.classList.remove("negative");
 			userFeedback.classList.add("positive");
 			userFeedback.style.display = "block";
-			userFeedback.innerHTML = "Sending your info...";
+			userFeedback.innerHTML = "Sending your info, please wait...";
 
 			$.post("sendForm", guest, function(data) {				
-				userFeedback.innerHTML = "SUCCESS!! We got your info, " + data.firstName + "...now just watch your mail and stay tuned for more info!";
-				console.log("guest created successfully in the server!");
-				sendBtn.classList.add("disabled");
-				sendBtn.disabled = true;
-				// WHAT IF SOMETHING FUCKS UP ON THE SERVER SIDE? HOW DO I SEND THE USER A MESSAGE?
+				if (data === "error") {
+					userFeedback.classList.remove("positive");
+					userFeedback.classList.add("negative");
+					userFeedback.innerHTML = "Hmmm, something messed up...if you got this message, let us know at <a href='mailto:FplusJ.2017@gmail.com'>FplusJ.2017@gmail.com</a> and try again later.";
+					console.log("Got an error back from the server!");
+					sendBtn.classList.add("disabled");
+					sendBtn.disabled = true;
+				} else {
+					userFeedback.innerHTML = "SUCCESS!! We got your info, " + data.firstName + "...now just watch your mail and stay tuned for more info!";
+					console.log("guest created successfully in the server!");
+					sendBtn.classList.add("disabled");
+					sendBtn.disabled = true;
+				}
 			});
 		}
 
