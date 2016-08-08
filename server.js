@@ -51,10 +51,6 @@ app.post("/sendForm", function(req, res) {
 });
 
 // Redirects
-app.get('https://felipe-justine-wedding.herokuapp.com/', function(req, res){
-  res.redirect("/");
-});
-
 app.get('/*', function(req, res){
   res.redirect("/");
 });
