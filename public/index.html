@@ -2,86 +2,122 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- removed "user-scalable=no" -->
 		<link rel="icon" href="img/creamy-favicon.png">
-		<title>Felipe + Justine</title>
+		<title>F + J</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
 	<body>
-		<!-- Main content -->
-		<div id="main-border" class="container-fluid">
-			<div class="inner-container center">
-				<h4 class="logo">F + J</h4>
-				<h1 class="title" id="location">Marina Del Rey, CA</h1>
-				<h1 class="title" id="date">05.20.2017</h1>
-			</div>
-			<div class="inner-container center">
-				<button class="btn" id="join-us" type="button" data-toggle="modal" data-target="#guestForm">Join us</button>
-				<h4 class="container-fluid footer-tag center">#JustineFlipsOut</h4>
-			</div>
-		</div>
-
-		<!-- Modal -->
-		<div id="guestForm" class="modal fade" role="dialog">
-		  	<div class="modal-dialog">
-
-		    <!-- Modal content-->
-			    <div class="modal-content">
-					<div class="container-fluid" id="modal-border">
+		<section id="jumbotron">
+			<div class="container-fluid jumbotron">
+				<div class="row">
+					<div class="centered">
 						<h4 class="logo">F + J</h4>
-					    <div class="modal-header">
-					    	<button type="button" class="close" data-dismiss="modal">&times;</button>
-					    	<h4 class="modal-title">Contact Info</h4>
-					    </div>
-					    <div class="modal-body">
-					    	<form role="form">
-					    		<div class="form-group static-form">
-					    			<label>Identify yourself!</label>
-					    			<br>
-					    			<input type="text" id="form-firstname" class="form-control form-name col-xs-6" placeholder="First Name" required>
-					    			<input type="text" id="form-lastname" class="form-control form-name col-xs-6" placeholder="Last Name" required>
-					    		</div>
-					    		<div class="form-group static-form">
-					    			<label>Electronic-mail</label>
-					    			<input type="email" id="form-email" class="form-control" placeholder="name@email.com" required>
-					    		</div>
-					    		<div class="form-group static-form">
-					    			<label>Mobile</label>
-					    			<input type="tel" id="form-phone" class="form-control" placeholder="Phone number" required>
-					    		</div>
-					    		<div class="form-group">
-					    			<label>Where you at??</label>
-					    			<br>					    	
-				    				<div>
-					    				<button type="button" id="form-US-btn" class="btn">United States</button>
-					    				<button type="button" id="form-notUS-btn" class="btn">Not U.S.</button>
-					    				<div id="btn-validation-icon"></div>
-				    				</div>
-					    		</div>
-					    		<div class="form-group dynamic-form" id="US-address">				    			
-					    			<input id="form-address1" type="text" class="form-control" placeholder="Address line 1" required>
-					    			<input id="form-address2" type="text" class="form-control" placeholder="Address line 2 (optional)">
-					    			<input id="form-city" type="text" class="form-control col-xs-8" placeholder="City" required>
-					    			<input id="form-state" type="text" class="form-control col-xs-4" placeholder="State" required>
-					    			<input id="form-zip" type="text" class="form-control" placeholder="Zip" required>
-					    		</div>
-					    		<div class="form-group dynamic-form" id="international-address">
-					    			<textarea id="form-international-address" rows="5" class="form-control" placeholder="Full mailing address" required ></textarea>	    		
-					    		</div>
-					    	</form>
-					    </div>
-					    <div class="modal-footer row">
-					    	<p id="user-feedback" class="col-sm-8"></p>
-					    	<button type="button" id="send-btn" class="btn" data-dismiss="">Send</button>
-					    </div>
-					    <h4 class="footer-tag">#JustineFlipsOut</h4>
+						<h1 class="title" id="location">Marina Del Rey, CA</h1>
+						<h1 class="title" id="date">05.20.2017</h1>
+						<h4 class="container-fluid footer-tag center">#JustineFlipsOut</h4>
 					</div>
-			    </div>
+				</div>
+				<div class="row">
+					<div class="btn-group"> <!-- this will turn into nav after scroll -->
+						<button class="btn">Venue</button>
+						<button class="btn">Program</button>
+						<button class="btn">About</button>
+						<button class="btn">Extra</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="venue">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						venue image carousel
+					</div>
+					<div class="col-sm-6">
+						About the venue paragraph
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						Other details (link, book room link, address)
+					</div>
+					<div class="col-sm-6">
+						Map embed
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="program">
+			<div class="container">
+				<div class="col-sm-4">
+					Ceremony details
+				</div>
+				<div class="col-sm-4">
+					Reception details (or cocktail hour)
+				</div>
+				<div class="col-sm-4">
+					After party details (or reception)
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						Justine image
+					</div>
+					<div class="col-sm-6">
+						Justine stats and bio blurb (flip card or slider)
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-sm-push-6">
+						Felipe image
+					</div>
+					<div class="col-sm-6 col-sm-pull-6">
+						Felipe stats and bio blurb (flip card or slider)
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						Cream Cheese image
+					</div>
+					<div class="col-sm-6">
+						Cream Cheese stats and bio blurb (flip card or slider)
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="extra">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<button class="btn">Gallery</button>
+						<p>one liner description</p>
+					</div>
+					<div class="col-sm-4">
+						<button class="btn">Playlist Collab</button>
+						<p>one liner description</p>
+					</div>
+					<div class="col-sm-4">
+						<button class="btn">Something else</button>
+						<p>one liner description</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">Contact info</div>
+					<div class="col-sm-6">Social</div>
+				</div>
+			</div>
+		</footer>
 
-		  	</div>
-		</div>
-
+		<!-- JAVASCRIPTs -->	
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
