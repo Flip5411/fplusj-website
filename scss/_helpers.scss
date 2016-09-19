@@ -1,0 +1,92 @@
+/* ---- VARIABLES ---- */
+
+	/*COLORS*/
+	$white: #F3F0F0;
+	$gray: #9A9899;
+	$black: #414143;
+	$sage-light: #9ACEC1;
+	$sage-dark: #68968E;
+	$coral: #FF776F;
+	$gold: #fbc926;
+	$gold-shine: #f2d293;
+	$gold-dark: #C3922E;
+
+	/*FONTS*/
+	@font-face {
+		font-family: fadedBlockStyle; /*KG all of me*/
+		src: url(../fonts/KGAllofMe.ttf);
+	}
+
+	@font-face {
+		font-family: regularSkinnyCases; /* Aaargh */
+		src: url(../fonts/Aaargh.ttf);
+	}
+
+	@font-face {
+		font-family: thinUpperCases; /* Neoteric */
+		src: url(../fonts/NEOTERIC_Regular.ttf);
+	}
+
+	@font-face {
+		font-family: thinUpperCases; /* Neoteric */
+		src: url(../fonts/NEOTERIC_Bold.ttf);
+		font-weight: bold;
+	}
+
+/* ---- FUNCTUONS ---- */
+
+	@function calc-height($row-num) {
+		@return 100% / $row-num
+	}
+
+/* ---- MIXINS ---- */
+
+	@mixin background-size($val) {
+		-webkit-background-size: $val;
+		-moz-background-size: $val;
+		-o-background-size: $val;
+		background-size: $val;
+	}
+
+	@mixin transition($args...) {
+		transition: $args;
+		-webkit-transition: $args;
+	}
+
+	@mixin linear-gradient($args...) {
+		background: -webkit-linear-gradient($args);
+		background: -o-linear-gradient($args);
+		background: -moz-linear-gradient($args);
+		background: linear-gradient($args);
+	}
+
+/* ---- PLACEHOLDERS ---- */
+	%btn-light {
+		text-transform: uppercase;
+		border-radius: 0;
+		@include transition(all 1s);
+		outline: 0;
+		border: 5px solid $white;
+		color: $white;
+		background: transparent;
+	}
+
+	%btn-dark {
+		text-transform: uppercase;
+		border-radius: 0;
+		@include transition(all 1s);
+		outline: 0;
+		border: 5px solid $black;
+		color: $black;
+		background: transparent;
+	}
+
+	%border-light {
+		border: 10px solid $white;
+		margin: 30px;
+	}
+
+	%border-dark {
+		border: 10px solid $black;
+		margin: 30px;
+	}

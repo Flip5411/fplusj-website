@@ -1,0 +1,106 @@
+@import "_helpers";
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+* {
+	text-align: center;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+section {
+	height: 100vh;
+}
+
+.container, .container-fluid {
+	border: 1px solid $coral;
+	height: 100%;
+}
+
+.btn, .btn:focus, .btn:active, .btn:hover {
+	@extend %btn-light;
+}
+
+.row, .row-centered {
+	border: 1px solid blue;
+}
+
+*[class*="col-"] {
+	border: 1px solid $sage-dark;
+}
+
+#home {
+	background-image: url("../img/marina-resized.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	@include background-size(cover);
+	font: {
+		family: regularSkinnyCases;
+		weight: normal;
+	}
+	color: $black;
+	.container-fluid {
+		padding: 0;
+	}
+	.border-style {
+		@extend %border-light;
+		height: calc(100% - (30px * 2)); /* height minus top and bottom margins */
+	}
+	.row {
+		height: calc-height(2);
+	}
+	#logo {
+		margin-top: 2%;
+		font: {
+			family: fadedBlockStyle;
+			size: 20px;
+			weight: normal;
+		}
+	}
+	.title {
+		letter-spacing: 7px;
+		&#location {
+			margin-top: 120px;
+		}
+	}
+
+	.btn-group {
+		height: calc-height(3);
+		margin-top: 80px;
+		width: 100%;
+		.btn {
+			font-size: 20px;
+			float: none;
+			width: 20%;
+			padding: 2% 0;
+			background: transparentize($black, 0.3);
+			&:hover {
+				background: $sage-dark;
+			}
+		}
+	}
+}
+
+#venue .row {
+	height: calc-height(2);
+}
+
+#program .row {
+	height: calc-height(1);
+}
+
+#about .row {
+	height: calc-height(3);
+}
+
+#extra .row {
+	height: calc-height(1);
+}

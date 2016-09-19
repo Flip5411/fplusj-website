@@ -1,40 +1,118 @@
+/* ---- VARIABLES ---- */
+/*COLORS*/
+/*FONTS*/
+@font-face {
+  font-family: fadedBlockStyle;
+  /*KG all of me*/
+  src: url(../fonts/KGAllofMe.ttf); }
+
+@font-face {
+  font-family: regularSkinnyCases;
+  /* Aaargh */
+  src: url(../fonts/Aaargh.ttf); }
+
+@font-face {
+  font-family: thinUpperCases;
+  /* Neoteric */
+  src: url(../fonts/NEOTERIC_Regular.ttf); }
+
+@font-face {
+  font-family: thinUpperCases;
+  /* Neoteric */
+  src: url(../fonts/NEOTERIC_Bold.ttf);
+  font-weight: bold; }
+
+/* ---- FUNCTUONS ---- */
+/* ---- MIXINS ---- */
+/* ---- PLACEHOLDERS ---- */
+.btn, .btn:focus, .btn:active, .btn:hover {
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  outline: 0;
+  border: 5px solid #F3F0F0;
+  color: #F3F0F0;
+  background: transparent; }
+
+#home .border-style {
+  border: 10px solid #F3F0F0;
+  margin: 30px; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
 * {
-	text-align: center;
-}
+  text-align: center; }
+
+html {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
 
 section {
-	height: 100vh;
-}
+  height: 100vh; }
 
 .container, .container-fluid {
-	border: 1px solid red;
-	height: 100%;
-}
+  border: 1px solid #FF776F;
+  height: 100%; }
 
 .row, .row-centered {
-	border: 1px solid blue;
-}
+  border: 1px solid blue; }
 
 *[class*="col-"] {
-	border: 1px solid green;
-}
+  border: 1px solid #68968E; }
 
-#jumbotron .row {
-	height: 50%;
-}
+#home {
+  background-image: url("../img/marina-resized.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: regularSkinnyCases;
+  font-weight: normal;
+  color: #414143; }
+  #home .container-fluid {
+    padding: 0; }
+  #home .border-style {
+    height: calc(100% - (30px * 2));
+    /* height minus top and bottom margins */ }
+  #home .row {
+    height: 50%; }
+  #home #logo {
+    margin-top: 2%;
+    font-family: fadedBlockStyle;
+    font-size: 20px;
+    font-weight: normal; }
+  #home .title {
+    letter-spacing: 7px; }
+    #home .title#location {
+      margin-top: 120px; }
+  #home .btn-group {
+    height: 33.33333%;
+    margin-top: 80px;
+    width: 100%; }
+    #home .btn-group .btn {
+      font-size: 20px;
+      float: none;
+      width: 20%;
+      padding: 2% 0;
+      background: rgba(65, 65, 67, 0.7); }
+      #home .btn-group .btn:hover {
+        background: #68968E; }
 
 #venue .row {
-	height: 50%;
-}
+  height: 50%; }
 
 #program .row {
-	height: 100%;
-}
+  height: 100%; }
 
 #about .row {
-	height: 33.33%;
-}
+  height: 33.33333%; }
 
 #extra .row {
-	height: 100%;
-}
+  height: 100%; }
