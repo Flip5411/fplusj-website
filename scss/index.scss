@@ -15,8 +15,16 @@ html {
 	left: 0;
 }
 
+body {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 section {
-	height: 100vh;
+	height: 100%;
+	background: $white;
 }
 
 .container, .container-fluid {
@@ -28,26 +36,33 @@ section {
 	@extend %btn-light;
 }
 
-.row, .row-centered {
-	border: 1px solid blue;
-}
-
 *[class*="col-"] {
 	border: 1px solid $sage-dark;
 }
 
 #home {
-	background-image: url("../img/marina-resized.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	@include background-size(cover);
+	background: transparent;
+	#bg-img {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background: {
+			image: url("../img/marina-resized.jpg");
+			position: center center;
+			repeat: no-repeat;
+		}
+		@include background-size(cover);
+	}
 	font: {
 		family: regularSkinnyCases;
 		weight: normal;
 	}
 	color: $black;
 	.container-fluid {
+		background: transparent;
 		padding: 0;
 	}
 	.border-style {
@@ -55,6 +70,8 @@ section {
 		height: calc(100% - (30px * 2)); /* height minus top and bottom margins */
 	}
 	.row {
+		position: relative;
+		margin: 0;
 		height: calc-height(2);
 	}
 	#logo {
@@ -66,16 +83,16 @@ section {
 		}
 	}
 	.title {
+		position: relative;
 		letter-spacing: 7px;
-		&#location {
-			margin-top: 120px;
-		}
+		top: 40%;
 	}
 
 	.btn-group {
 		height: calc-height(3);
 		margin-top: 80px;
 		width: 100%;
+		z-index: 1;
 		.btn {
 			font-size: 20px;
 			float: none;
@@ -86,6 +103,22 @@ section {
 				background: $sage-dark;
 			}
 		}
+	}
+
+	#hashtag {
+		position: absolute;
+		margin: 0;
+		padding-top: 150px;
+		color: $white;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+		font: {
+			family: thinUpperCases;
+			weight: bold;
+			size: 25px;
+		}
+		@include linear-gradient(to top, transparentize($black, 0.5), transparentize($white, 1));
 	}
 }
 
@@ -103,4 +136,33 @@ section {
 
 #extra .row {
 	height: calc-height(1);
+}
+
+
+/* ---- MOBILE MEDIA QUERIES ----- */
+@media (max-width: 767px) {
+	#home {
+		.title {
+			font-size: 27px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	#home {
+		.title {
+			font-size: 20px;
+		}
+		#logo {
+			margin-top: 5%;
+		}
+		.border-style {
+			border: none;
+			height: 100%;
+			margin: 0;
+		}
+		#hashtag {
+			padding-bottom: 10px;
+		}
+	}
 }

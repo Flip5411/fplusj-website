@@ -51,37 +51,51 @@ html {
   top: 0;
   left: 0; }
 
+body {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
+
 section {
-  height: 100vh; }
+  height: 100%;
+  background: #F3F0F0; }
 
 .container, .container-fluid {
   border: 1px solid #FF776F;
   height: 100%; }
 
-.row, .row-centered {
-  border: 1px solid blue; }
-
 *[class*="col-"] {
   border: 1px solid #68968E; }
 
 #home {
-  background-image: url("../img/marina-resized.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: transparent;
   font-family: regularSkinnyCases;
   font-weight: normal;
   color: #414143; }
+  #home #bg-img {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url("../img/marina-resized.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
   #home .container-fluid {
+    background: transparent;
     padding: 0; }
   #home .border-style {
     height: calc(100% - (30px * 2));
     /* height minus top and bottom margins */ }
   #home .row {
+    position: relative;
+    margin: 0;
     height: 50%; }
   #home #logo {
     margin-top: 2%;
@@ -89,13 +103,14 @@ section {
     font-size: 20px;
     font-weight: normal; }
   #home .title {
-    letter-spacing: 7px; }
-    #home .title#location {
-      margin-top: 120px; }
+    position: relative;
+    letter-spacing: 7px;
+    top: 40%; }
   #home .btn-group {
     height: 33.33333%;
     margin-top: 80px;
-    width: 100%; }
+    width: 100%;
+    z-index: 1; }
     #home .btn-group .btn {
       font-size: 20px;
       float: none;
@@ -104,6 +119,21 @@ section {
       background: rgba(65, 65, 67, 0.7); }
       #home .btn-group .btn:hover {
         background: #68968E; }
+  #home #hashtag {
+    position: absolute;
+    margin: 0;
+    padding-top: 150px;
+    color: #F3F0F0;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    font-family: thinUpperCases;
+    font-weight: bold;
+    font-size: 25px;
+    background: -webkit-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
+    background: -o-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
+    background: -moz-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
+    background: linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0)); }
 
 #venue .row {
   height: 50%; }
@@ -116,3 +146,20 @@ section {
 
 #extra .row {
   height: 100%; }
+
+/* ---- MOBILE MEDIA QUERIES ----- */
+@media (max-width: 767px) {
+  #home .title {
+    font-size: 27px; } }
+
+@media (max-width: 480px) {
+  #home .title {
+    font-size: 20px; }
+  #home #logo {
+    margin-top: 5%; }
+  #home .border-style {
+    border: none;
+    height: 100%;
+    margin: 0; }
+  #home #hashtag {
+    padding-bottom: 10px; } }
