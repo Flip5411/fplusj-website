@@ -53,6 +53,7 @@ html {
 
 body {
   height: 100%;
+  min-height: 480px;
   width: 100%;
   top: 0;
   left: 0; }
@@ -119,6 +120,40 @@ section {
       background: rgba(65, 65, 67, 0.7); }
       #home .btn-group .btn:hover {
         background: #68968E; }
+  #home #sm-nav {
+    width: 100%; }
+    #home #sm-nav .btn {
+      width: 45%;
+      padding: 2% 0; }
+    #home #sm-nav.open > .btn-default:focus {
+      border-color: #F3F0F0;
+      color: #F3F0F0;
+      background: #68968E; }
+    #home #sm-nav .caret {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #F3F0F0;
+      border-top: 8px solid transparent;
+      float: right;
+      margin-right: 5%; }
+    #home #sm-nav .dropdown-menu {
+      text-transform: uppercase;
+      margin: 0 auto;
+      width: 45%;
+      right: 0;
+      text-align: center;
+      background: #F3F0F0;
+      border: 5px solid #F3F0F0;
+      border-radius: 0; }
+      #home #sm-nav .dropdown-menu a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #414143;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s; }
+        #home #sm-nav .dropdown-menu a:hover {
+          background: #9ACEC1;
+          color: #F3F0F0; }
   #home #hashtag {
     position: absolute;
     margin: 0;

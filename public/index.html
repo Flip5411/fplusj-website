@@ -19,11 +19,24 @@
 							<h1 class="title" id="date">05.20.2017</h1>
 					</div>
 					<div class="row">
-						<div class="btn-group"> <!-- this will turn into nav after scroll -->
+						<!-- larger width nav -->
+						<div id="lg-nav" class="btn-group hidden-xs">
 							<a class="btn" href="#venue">Venue</a>
 							<a class="btn" href="#program">Program</a>
 							<a class="btn" href="#about">About</a>
 							<a class="btn" href="#extra">Extra</a>
+						</div>
+						<!-- small width nav -->
+						<div id="sm-nav" class="btn-group dropup visible-xs-block">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Jump to... <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#venue">Venue</a></li>
+								<li><a href="#program">Program</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#extra">Extra</a></li>
+							</ul>
 						</div>
 						<h4 id="hashtag">#JustineFlipsOut</h4>
 					</div>
