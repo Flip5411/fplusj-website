@@ -33,7 +33,37 @@
 		font-weight: bold;
 	}
 
-/* ---- FUNCTUONS ---- */
+	/*FREQUENT VALUES*/
+	$nav-height: 50px;
+
+	/*ANIMATIONS*/
+	@keyframes peekIn {
+		from {top: -$nav-height;}
+		to {top: 0px;}
+	}
+	@-webkit-keyframes peekIn {
+		from {top: -$nav-height;}
+		to {top: 0px;}
+	}
+	@-moz-keyframes peekIn {
+		from {top: -$nav-height;}
+		to {top: 0px;}
+	}
+
+	@keyframes sneakOut {
+		from {top: 0px;}
+		to {top: -$nav-height;}
+	}
+	@-webkit-keyframes peekIn {
+		from {top: 0px;}
+		to {top: -$nav-height;}
+	}
+	@-moz-keyframes peekIn {
+		from {top: 0px;}
+		to {top: -$nav-height;}
+	}
+
+/* ---- FUNCTIONS ---- */
 
 	@function calc-height($row-num) {
 		@return 100% / $row-num
@@ -58,6 +88,18 @@
 		background: -o-linear-gradient($args);
 		background: -moz-linear-gradient($args);
 		background: linear-gradient($args);
+	}
+
+	@mixin animation-name($name) {
+		animation-name: $name;
+		-webkit-animation-name: $name;
+		-moz-animation-name: $name;
+	}
+
+	@mixin animation-duration($time) {
+		animation-duration: $time;
+		-webkit-animation-duration: $time;
+		-moz-animation-duration: $time;
 	}
 
 /* ---- PLACEHOLDERS ---- */

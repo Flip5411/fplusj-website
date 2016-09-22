@@ -24,7 +24,7 @@ body {
 }
 
 section {
-	height: 100%;
+	height: calc(100% - #{$nav-height}); /* compensating for sticky nav */
 	background: $white;
 }
 
@@ -42,6 +42,7 @@ section {
 }
 
 #home {
+	height: 100%;
 	background: transparent;
 	#bg-img {
 		position: fixed;
@@ -80,7 +81,7 @@ section {
 		font: {
 			family: fadedBlockStyle;
 			size: 20px;
-			weight: normal;
+			weight: 400;
 		}
 	}
 	.title {
@@ -106,13 +107,46 @@ section {
 		}
 	}
 
+	#lg-nav.fixed {
+		position: fixed;
+		height: $nav-height;
+		width: 100%;
+		background: $white;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		box-shadow: 3px 0 5px $black;
+		@include animation-name(peekIn);
+		@include animation-duration(1s);
+		.btn-group {
+			width: 60%;
+			height: 100%;
+			margin: 0;
+			float: right;
+			margin-right: 30px;
+		}
+		.btn {
+			float: left;
+			width: 25%;
+			height: 100%;
+			border: none;
+			background: transparent;
+			font-size: 20px;
+			color: $black;
+			&:hover {
+				background: $sage-light;
+				color: $white;
+			}
+		}
+	}
+
 	#sm-nav {
 		width: 100%;
 		.btn {
 			width: 45%;
 			padding: 2% 0;
 		}
-		&.open>.btn-default:focus {
+		.open>.btn-default:focus {
 			border-color: $white;
 			color: $white;
 			background: $sage-dark;
@@ -130,6 +164,7 @@ section {
 		.dropdown-menu {
 			text-transform: uppercase;
 			margin: 0 auto;
+			padding: 0;
 			width: 45%;
 			right: 0;
 			text-align: center;
@@ -137,15 +172,75 @@ section {
 			border: 5px solid $white;
 			border-radius: 0;
 			a {
-				padding-top: 10px;
-				padding-bottom: 10px;
+				padding: 12px 0;
 				color: $black;
-				@include transition(all 0.5s);
+				@include transition(all 0.6s);
 				&:hover {
 					background: $sage-light;
 					color: $white;
 				}
 			}
+		}
+		&.fixed {
+			position: fixed;
+			height: $nav-height;
+			width: 100%;
+			background: $white;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			box-shadow: 3px 0 5px $black;
+			@include animation-name(peekIn);
+			@include animation-duration(1s);
+			.btn-group {
+				width: 45%;
+				height: 100%;
+				margin: 0;
+				float: right;
+				margin-right: 30px;
+			}
+			.caret {
+				border: {
+					left: 8px solid transparent;
+					right: 8px solid transparent;
+					bottom: 8px solid transparent;
+					top: 8px solid $white;
+				}
+				margin-top: 8px;
+				float: right;
+				margin-right: 5%;
+			}
+			.btn {
+				float: left;
+				width: 100%;
+				height: 100%;
+				border: none;
+				background: transparent;
+				font-size: 20px;
+				color: $black;
+				&:hover {
+					background: $sage-light;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	#logo.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: $nav-height;
+		z-index: 3;
+		margin: 0;
+		padding: (($nav-height - 20px) / 2) 30px; /* remaining space between font size and nav height */
+		color: $black;
+		@include animation-name(peekIn);
+		@include animation-duration(1s);
+		&:hover {
+			@include transition(all 0.6s);
+			color: $white;
+			background: $coral;
 		}
 	}
 
