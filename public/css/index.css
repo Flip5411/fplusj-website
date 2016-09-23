@@ -23,43 +23,6 @@
   font-weight: bold; }
 
 /*FREQUENT VALUES*/
-/*ANIMATIONS*/
-@keyframes peekIn {
-  from {
-    top: -50px; }
-  to {
-    top: 0px; } }
-
-@-webkit-keyframes peekIn {
-  from {
-    top: -50px; }
-  to {
-    top: 0px; } }
-
-@-moz-keyframes peekIn {
-  from {
-    top: -50px; }
-  to {
-    top: 0px; } }
-
-@keyframes sneakOut {
-  from {
-    top: 0px; }
-  to {
-    top: -50px; } }
-
-@-webkit-keyframes peekIn {
-  from {
-    top: 0px; }
-  to {
-    top: -50px; } }
-
-@-moz-keyframes peekIn {
-  from {
-    top: 0px; }
-  to {
-    top: -50px; } }
-
 /* ---- FUNCTIONS ---- */
 /* ---- MIXINS ---- */
 /* ---- PLACEHOLDERS ---- */
@@ -138,7 +101,7 @@ section {
     position: relative;
     margin: 0;
     height: 50%; }
-  #home #logo {
+  #home .logo {
     margin-top: 2%;
     font-family: fadedBlockStyle;
     font-size: 20px;
@@ -160,28 +123,24 @@ section {
       background: rgba(65, 65, 67, 0.7); }
       #home .btn-group .btn:hover {
         background: #68968E; }
-  #home #lg-nav.fixed {
+  #home #lg-nav-fixed {
     position: fixed;
     height: 50px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
     width: 100%;
     background: #F3F0F0;
-    top: 0;
+    top: -50px;
     left: 0;
     z-index: 2;
-    box-shadow: 3px 0 5px #414143;
-    animation-name: peekIn;
-    -webkit-animation-name: peekIn;
-    -moz-animation-name: peekIn;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s; }
-    #home #lg-nav.fixed .btn-group {
+    box-shadow: 3px 0 5px #414143; }
+    #home #lg-nav-fixed .btn-group {
       width: 60%;
       height: 100%;
       margin: 0;
       float: right;
       margin-right: 30px; }
-    #home #lg-nav.fixed .btn {
+    #home #lg-nav-fixed .btn {
       float: left;
       width: 25%;
       height: 100%;
@@ -189,7 +148,7 @@ section {
       background: transparent;
       font-size: 20px;
       color: #414143; }
-      #home #lg-nav.fixed .btn:hover {
+      #home #lg-nav-fixed .btn:hover {
         background: #9ACEC1;
         color: #F3F0F0; }
   #home #sm-nav {
@@ -226,67 +185,82 @@ section {
         #home #sm-nav .dropdown-menu a:hover {
           background: #9ACEC1;
           color: #F3F0F0; }
-    #home #sm-nav.fixed {
-      position: fixed;
-      height: 50px;
+  #home #sm-nav-fixed {
+    position: fixed;
+    height: 50px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    width: 100%;
+    background: #F3F0F0;
+    top: -50px;
+    left: 0;
+    z-index: 2;
+    box-shadow: 3px 0 5px #414143; }
+    #home #sm-nav-fixed .btn-group {
+      width: 45%;
+      height: 100%;
+      margin: 0;
+      float: right;
+      margin-right: 30px; }
+    #home #sm-nav-fixed .open > .btn-default:focus {
+      border-color: #F3F0F0;
+      color: #F3F0F0;
+      background: #68968E; }
+    #home #sm-nav-fixed .caret {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-top: 8px solid #F3F0F0;
+      margin-top: 8px;
+      float: right;
+      margin-right: 5%; }
+    #home #sm-nav-fixed .btn {
+      float: left;
       width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      color: #414143; }
+      #home #sm-nav-fixed .btn:hover {
+        background: #9ACEC1;
+        color: #F3F0F0; }
+    #home #sm-nav-fixed .dropdown-menu {
+      text-transform: uppercase;
+      margin: 0 auto;
+      padding: 0;
+      width: 45%;
+      right: 0;
+      text-align: center;
       background: #F3F0F0;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      box-shadow: 3px 0 5px #414143;
-      animation-name: peekIn;
-      -webkit-animation-name: peekIn;
-      -moz-animation-name: peekIn;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
-      -moz-animation-duration: 1s; }
-      #home #sm-nav.fixed .btn-group {
-        width: 45%;
-        height: 100%;
-        margin: 0;
-        float: right;
-        margin-right: 30px; }
-      #home #sm-nav.fixed .caret {
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-top: 8px solid #F3F0F0;
-        margin-top: 8px;
-        float: right;
-        margin-right: 5%; }
-      #home #sm-nav.fixed .btn {
-        float: left;
-        width: 100%;
-        height: 100%;
-        border: none;
-        background: transparent;
-        font-size: 20px;
-        color: #414143; }
-        #home #sm-nav.fixed .btn:hover {
+      border: 5px solid #F3F0F0;
+      border-radius: 0; }
+      #home #sm-nav-fixed .dropdown-menu a {
+        padding: 12px 0;
+        color: #414143;
+        transition: all 0.6s;
+        -webkit-transition: all 0.6s; }
+        #home #sm-nav-fixed .dropdown-menu a:hover {
           background: #9ACEC1;
           color: #F3F0F0; }
-  #home #logo.fixed {
+  #home .logo.fixed {
     position: fixed;
-    top: 0;
+    top: -50px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
     left: 0;
     height: 50px;
     z-index: 3;
     margin: 0;
-    padding: 15px 30px;
+    padding: 12px 30px;
     /* remaining space between font size and nav height */
-    color: #414143;
-    animation-name: peekIn;
-    -webkit-animation-name: peekIn;
-    -moz-animation-name: peekIn;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s; }
-    #home #logo.fixed:hover {
+    color: #414143; }
+    #home .logo.fixed:hover {
       transition: all 0.6s;
       -webkit-transition: all 0.6s;
       color: #F3F0F0;
-      background: #FF776F; }
+      background: #FF776F;
+      text-decoration: none; }
   #home #hashtag {
     position: absolute;
     margin: 0;

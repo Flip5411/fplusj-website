@@ -1,34 +1,26 @@
-$(document).ready(function(){
+window.onload = function() {
 
-	var navTrigger = $("#venue").offset().top - 50;
+	var navHeight = 50;
+	var navTrigger = $("#venue").offset().top - navHeight - 1;
 	if (window.scrollY >= navTrigger) {
-		$("#lg-nav").addClass("fixed");
-		$("#sm-nav").addClass("fixed");
-		$("#logo").addClass("fixed");
-		$("#sm-nav .btn-group").removeClass("dropup");
-		$("#sm-nav .btn-group").addClass("dropdown");
+		$("#lg-nav-fixed").css("top", "0px");
+		$("#sm-nav-fixed").css("top", "0px");
+		$(".logo.fixed").css("top", "0px");
 	} else {
-		$("#lg-nav").removeClass("fixed");
-		$("#sm-nav").removeClass("fixed");
-		$("#logo").removeClass("fixed");
-		$("#sm-nav .btn-group").removeClass("dropdown");
-		$("#sm-nav .btn-group").addClass("dropup");
+		$("#lg-nav-fixed").css("top", "-" + navHeight + "0px");
+		$("#sm-nav-fixed").css("top", "-" + navHeight + "0px");
+		$(".logo.fixed").css("top", "-" + navHeight + "0px");
 	}
-
 
 	$(document).scroll(function() {
 		if (window.scrollY >= navTrigger) {
-			$("#lg-nav").addClass("fixed");
-			$("#sm-nav").addClass("fixed");
-			$("#logo").addClass("fixed");
-			$("#sm-nav .btn-group").removeClass("dropup");
-			$("#sm-nav .btn-group").addClass("dropdown");
+			$("#lg-nav-fixed").css("top", "0px");
+			$("#sm-nav-fixed").css("top", "0px");
+			$(".logo.fixed").css("top", "0px");
 		} else {
-			$("#lg-nav").removeClass("fixed");
-			$("#sm-nav").removeClass("fixed");
-			$("#logo").removeClass("fixed");
-			$("#sm-nav .btn-group").removeClass("dropdown");
-			$("#sm-nav .btn-group").addClass("dropup");
+			$("#lg-nav-fixed").css("top", "-" + navHeight + "0px");
+			$("#sm-nav-fixed").css("top", "-" + navHeight + "0px");
+			$(".logo.fixed").css("top", "-" + navHeight + "0px");
 		}
 	});
 
@@ -36,8 +28,8 @@ $(document).ready(function(){
 		var linkDest = $(this).attr("href");
 		var destPosition = $(linkDest).offset();
 		$("html, body").animate({
-			scrollTop: destPosition.top - 50
+			scrollTop: destPosition.top - navHeight
 		}, "slow");
 	});
 
-});
+}

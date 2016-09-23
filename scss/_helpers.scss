@@ -36,33 +36,6 @@
 	/*FREQUENT VALUES*/
 	$nav-height: 50px;
 
-	/*ANIMATIONS*/
-	@keyframes peekIn {
-		from {top: -$nav-height;}
-		to {top: 0px;}
-	}
-	@-webkit-keyframes peekIn {
-		from {top: -$nav-height;}
-		to {top: 0px;}
-	}
-	@-moz-keyframes peekIn {
-		from {top: -$nav-height;}
-		to {top: 0px;}
-	}
-
-	@keyframes sneakOut {
-		from {top: 0px;}
-		to {top: -$nav-height;}
-	}
-	@-webkit-keyframes peekIn {
-		from {top: 0px;}
-		to {top: -$nav-height;}
-	}
-	@-moz-keyframes peekIn {
-		from {top: 0px;}
-		to {top: -$nav-height;}
-	}
-
 /* ---- FUNCTIONS ---- */
 
 	@function calc-height($row-num) {

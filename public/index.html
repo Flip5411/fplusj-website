@@ -14,7 +14,7 @@
 			<div class="container-fluid">
 				<div class="border-style">
 					<div class="row centered">
-							<h4 id="logo">F + J</h4>
+							<h4 class="logo">F + J</h4>
 							<h1 class="title" id="location">Marina Del Rey, CA</h1>
 							<h1 class="title" id="date">05.20.2017</h1>
 					</div>
@@ -28,9 +28,35 @@
 								<a class="btn" href="#extra">Extra</a>
 							</div>
 						</div>
+						<!-- fixed large width nav -->
+						<div id="lg-nav-fixed" class="hidden-xs">
+							<a class="logo fixed" href="#home">F + J</a>
+							<div class="btn-group">
+								<a class="btn" href="#venue">Venue</a>
+								<a class="btn" href="#program">Program</a>
+								<a class="btn" href="#about">About</a>
+								<a class="btn" href="#extra">Extra</a>
+							</div>
+						</div>
 						<!-- small width nav -->
 						<div id="sm-nav" class="visible-xs-block">
 							<div class="btn-group dropup">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Jump to... <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#venue">Venue</a></li>
+									<li><a href="#program">Program</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#extra">Extra</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- fixed small width nav -->
+						<div id="sm-nav-fixed" class="visible-xs-block">
+							<a class="logo fixed" href="#home">F + J</a>
+							<div class="btn-group dropdown">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Jump to... <span class="caret"></span>
 								</button>
