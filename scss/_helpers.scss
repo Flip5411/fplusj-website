@@ -11,6 +11,7 @@
 	$gold-shine: #f2d293;
 	$gold-dark: #C3922E;
 
+
 	/*FONTS*/
 	@font-face {
 		font-family: fadedBlockStyle; /*KG all of me*/
@@ -35,15 +36,14 @@
 
 	/*FREQUENT VALUES*/
 	$nav-height: 50px;
-
-/* ---- FUNCTIONS ---- */
-
-	@function calc-height($row-num) {
-		@return 100% / $row-num
-	}
+	$xs-width: 480px;
+	$sm-width: 768px;
+	$md-width: 992px;
+	$lg-width: 1200px;
 
 /* ---- MIXINS ---- */
-
+	
+	/*COMPATIBILITY TIME SAVERS*/
 	@mixin background-size($val) {
 		-webkit-background-size: $val;
 		-moz-background-size: $val;
@@ -75,33 +75,118 @@
 		-moz-animation-duration: $time;
 	}
 
-/* ---- PLACEHOLDERS ---- */
-	%btn-light {
+	/*RESPONSIVE BEHAVIOR*/
+	@mixin resp-title-size($size) {
+		font-size: $size;
+		@media (min-width: ($lg-width + 1)) {
+			font-size: $size * 1.20;
+		}
+		@media (max-width: $lg-width) {
+			font-size: $size * 1.10;
+		}
+		@media (max-width: $md-width) {
+			font-size: $size;
+		}
+		@media (max-width: $sm-width) {
+			font-size: $size * 0.75;
+		}
+		@media (max-width: $xs-width) {
+			font-size: $size * 0.5;
+		}
+	}
+
+	@mixin resp-text-size($size) {
+		font-size: $size;
+		@media (min-width: ($lg-width + 1)) {
+			font-size: $size * 1.20;
+		}
+		@media (max-width: $lg-width) {
+			font-size: $size * 1.10;
+		}
+		@media (max-width: $md-width) {
+			font-size: $size;
+		}
+	}
+
+	/*STYLES*/
+	@mixin default-h1($color) {
+		font-family: fadedBlockStyle;
+		color: $color;
+		text-align: center;
+		padding: 50px 0 15px 0;
+	}
+
+	@mixin default-h3($color) {
+		font-family: regularSkinnyCases;
+		font-weight: bolder;
+		color: $color;
+		text-transform: uppercase;
+		text-align: center;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	@mixin default-p($color) {
+		text-align: center;
+		color: $color;
+		font-family: regularSkinnyCases;
+		margin-bottom: 20px;
+	}
+
+	@mixin default-a($color) {
+		color: $color;
+		&:hover {
+			text-decoration: none;
+			color: darken($color, 30%);
+			cursor: pointer;
+		}
+	}
+
+	@mixin default-btn($color) {
 		text-transform: uppercase;
 		border-radius: 0;
 		@include transition(all 1s);
 		outline: 0;
-		border: 5px solid $white;
-		color: $white;
+		border: 5px solid $color;
+		color: $color;
 		background: transparent;
 	}
 
-	%btn-dark {
-		text-transform: uppercase;
-		border-radius: 0;
-		@include transition(all 1s);
-		outline: 0;
-		border: 5px solid $black;
-		color: $black;
-		background: transparent;
+	/*LAYOUTS*/
+	@mixin default-text-block(
+		$bgColor: transparent,
+		$h3Color: $sage-light,
+		$h3Size: 28px, 
+		$pColor: $black,
+		$pSize: 14px,
+		$aColor: $coral
+	) {
+		background: $bgColor;
+		padding-left: 30px;
+		padding-right: 30px;
+		h3 {
+			@include default-h3($h3Color);
+			@include resp-text-size($h3Size);
+		}
+		p {
+			@include default-p($pColor);
+			@include resp-text-size($pSize);
+		}
+		a {
+			@include default-a($aColor);
+		}
 	}
 
-	%border-light {
-		border: 10px solid $white;
-		margin: 30px;
+	@mixin boats-div($colorRef) {
+		background-image: url("../img/boats-divider-#{$colorRef}.png");
+		@include background-size(auto 100%); 
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: 30px 0;
+		height: 30px;
+		width: 100%;
 	}
 
-	%border-dark {
-		border: 10px solid $black;
-		margin: 30px;
-	}
+
+
+

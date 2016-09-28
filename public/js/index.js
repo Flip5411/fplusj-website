@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function() {
 
 	var navHeight = 50;
 	var navTrigger = $("#venue").offset().top - navHeight - 1;
@@ -24,7 +24,7 @@ window.onload = function() {
 		}
 	});
 
-	$("a").click(function() {
+	$("#home a").click(function() {
 		var linkDest = $(this).attr("href");
 		var destPosition = $(linkDest).offset();
 		$("html, body").animate({
@@ -32,4 +32,4 @@ window.onload = function() {
 		}, "slow");
 	});
 
-}
+});

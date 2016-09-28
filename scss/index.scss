@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-* {
-	text-align: center;
-}
-
 html {
 	height: 100%;
 	width: 100%;
@@ -17,33 +13,43 @@ html {
 
 body {
 	height: 100%;
-	min-height: 480px;
+	min-height: $xs-width - $nav-height;
 	width: 100%;
 	top: 0;
 	left: 0;
+	text-align: center;
+	font-family: regularSkinnyCases;
+	*[class*="col-"] {
+		padding: 30px 0;
+	}
 }
 
 section {
-	height: calc(100% - #{$nav-height}); /* compensating for sticky nav */
-	background: $white;
-}
-
-.container, .container-fluid {
-	border: 1px solid $coral;
-	height: 100%;
+	padding-bottom: 30px;
 }
 
 .btn, .btn:focus, .btn:active, .btn:hover {
-	@extend %btn-light;
+	@include default-btn($white);
 }
 
-*[class*="col-"] {
-	border: 1px solid $sage-dark;
+.section-header > h1 {
+	@include default-h1($coral);
+	@include resp-title-size(70px);
 }
+
+.text-block {
+	@include default-text-block;
+}
+
+/* ---- HOME SECTION ----- */
 
 #home {
 	height: 100%;
 	background: transparent;
+	padding-bottom: 0;
+	.container-fluid {
+		height: 100%;
+	}
 	#bg-img {
 		position: fixed;
 		height: 100%;
@@ -68,13 +74,14 @@ section {
 		padding: 0;
 	}
 	.border-style {
-		@extend %border-light;
+		border: 10px solid $white;
+		margin: 30px;
 		height: calc(100% - (30px * 2)); /* height minus top and bottom margins */
 	}
 	.row {
 		position: relative;
 		margin: 0;
-		height: calc-height(2);
+		height: 50%;
 	}
 	.logo {
 		margin-top: 2%;
@@ -87,11 +94,12 @@ section {
 	.title {
 		position: relative;
 		letter-spacing: 7px;
-		top: 40%;
+		top: 35%;
+		@include resp-title-size(36px);
 	}
 
 	.btn-group {
-		height: calc-height(3);
+		height: 33.33%;
 		margin-top: 80px;
 		width: 100%;
 		z-index: 1;
@@ -115,7 +123,7 @@ section {
 		background: $white;
 		top: -$nav-height;
 		left: 0;
-		z-index: 2;
+		z-index: 10;
 		box-shadow: 3px 0 5px $black;
 		.btn-group {
 			width: 60%;
@@ -190,7 +198,7 @@ section {
 		background: $white;
 		top: -$nav-height;
 		left: 0;
-		z-index: 2;
+		z-index: 10;
 		box-shadow: 3px 0 5px $black;
 		.btn-group {
 			width: 45%;
@@ -256,7 +264,7 @@ section {
 		@include transition(all 0.5s);
 		left: 0;
 		height: $nav-height;
-		z-index: 3;
+		z-index: 10;
 		margin: 0;
 		padding: 12px 30px; /* remaining space between font size and nav height */
 		color: $black;
@@ -285,38 +293,80 @@ section {
 	}
 }
 
-#venue .row {
-	height: calc-height(2);
+/* ---- VENUE SECTION ----- */
+
+#venue {
+	background: $white;
+	.carousel-container {
+		padding-left: 0;
+		padding-right: 30px;
+		.carousel-control {
+			&:active, &:focus {
+				opacity: 0.5;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.text-block {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.boats-div {
+		@include boats-div(coral);
+	}
+	.img-responsive {
+		padding-left: 30px;
+	}
 }
 
-#program .row {
-	height: calc-height(1);
-}
+/* ---- PROGRAM SECTION ----- */
 
-#about .row {
-	height: calc-height(3);
-}
+#program {
+	@include linear-gradient(to right, transparentize($sage-light, 0.2), transparentize($sage-dark, 0.2) 50%);
+	color: $white;
+	.section-header > h1 {
+		@include resp-title-size(100px);
+	}
+	.boats-div {
+		@include boats-div(white);
+	}
+	.text-block {
+		padding-right: 100% * 1/12; /*making a gutter equal to a bootstrap column*/
+		h3 {
+			color: $black;
+			@include resp-text-size(30px);
+		}
+		.time {
+			@include resp-text-size(24px);
+			color: $white;
+			margin: 10px 20%;
+			background: $coral;
+		}
+		.details {
+			color: $white;
+			@include resp-text-size(16px);
 
-#extra .row {
-	height: calc-height(1);
-}
-
-
-/* ---- MOBILE MEDIA QUERIES ----- */
-@media (max-width: 767px) {
-	#home {
-		.title {
-			font-size: 27px;
 		}
 	}
 }
 
-@media (max-width: 480px) {
+#about {
+	background: $white;
+	color: $white;
+}
+
+#extra {
+	@include linear-gradient(to top right, transparentize($coral, 0.1), transparentize($coral, 0.1));
+	color: $white;
+}
+
+/* ---- MOBILE MEDIA QUERIES ----- */
+
+@media (max-width: $xs-width) {
 	#home {
-		.title {
-			font-size: 20px;
-		}
-		#logo {
+		.logo {
 			margin-top: 5%;
 		}
 		.border-style {
@@ -326,6 +376,28 @@ section {
 		}
 		#hashtag {
 			padding-bottom: 10px;
+		}
+	}
+
+	#program {
+		.text-block {
+			h3 {
+				margin: 0;
+			}
+			.details {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: $sm-width) {
+	#venue {
+		.carousel-container {
+			padding-right: 0;
+		}
+		.img-responsive {
+			padding-left: 0;
 		}
 	}
 }
