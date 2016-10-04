@@ -34,7 +34,7 @@ section {
 
 .section-header > h1 {
 	@include default-h1($coral);
-	@include resp-title-size(70px);
+	@include resp-title-size(100px);
 }
 
 .text-block {
@@ -124,7 +124,7 @@ section {
 		top: -$nav-height;
 		left: 0;
 		z-index: 10;
-		box-shadow: 3px 0 5px $black;
+		@include box-shadow(3px 0 5px $black);
 		.btn-group {
 			width: 60%;
 			height: 100%;
@@ -199,7 +199,7 @@ section {
 		top: -$nav-height;
 		left: 0;
 		z-index: 10;
-		box-shadow: 3px 0 5px $black;
+		@include box-shadow(3px 0 5px $black);
 		.btn-group {
 			width: 45%;
 			height: 100%;
@@ -297,6 +297,9 @@ section {
 
 #venue {
 	background: $white;
+	.section-header > h1 {
+		@include resp-title-size(70px);
+	}
 	.carousel-container {
 		padding-left: 0;
 		padding-right: 30px;
@@ -326,9 +329,6 @@ section {
 #program {
 	@include linear-gradient(to right, transparentize($sage-light, 0.2), transparentize($sage-dark, 0.2) 50%);
 	color: $white;
-	.section-header > h1 {
-		@include resp-title-size(100px);
-	}
 	.boats-div {
 		@include boats-div(white);
 	}
@@ -352,14 +352,232 @@ section {
 	}
 }
 
+/* ---- ABOUT SECTION ----- */
+
 #about {
 	background: $white;
-	color: $white;
+	.boats-div {
+		@include boats-div(sage);
+	}
+	.card-container, .card-section {
+		font-family: thinUpperCases;
+	}
+	.avatar {
+		padding-bottom: 0;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	img {
+		border: 10px solid $coral;
+	}
+	.card-info {
+		.card-name {
+			color: $coral;
+			@include resp-text-size(35px);
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.card-section {
+			padding: 0 15px;
+			height: 360px;
+			p {
+				@include resp-text-size(18px);
+			}
+			em {
+				color: $coral;
+			}
+			.card-section-banner {
+				margin: 20px 0;
+				.card-section-title {					
+					padding: 0;
+					h3 {
+						margin: 0;
+						display: inline-block;
+						padding: 10px 0;
+					}
+					border-bottom: 2px solid $gray;
+				}
+				.card-section-toggle {
+					padding: 0;
+					div {
+						color: $coral;
+						cursor: pointer;
+						width: 100%;
+						display: inline-block;
+						text-transform: none;
+						@include resp-text-size(16px);
+						padding: 15px 0;
+						@include transition(all 1s);
+						&:hover, &:active, &:focus {
+							color: $white;
+							background: $coral;
+						}
+					}
+				}
+			}
+		}
+		.bio {
+			display: block;
+		}
+		.stats {
+			display: none;
+			.progress {
+				height: auto;
+				margin-bottom: 10px;
+				background-color: $white;
+				border-radius: 0;
+				@include box-shadow(none);
+				border: 2px solid $sage-light;
+			}
+			.progress-bar {
+				@include resp-text-size(16px);
+				text-align: left;
+				background-color: $sage-light;
+				color: $white;
+				@include box-shadow(none);
+				padding-left: 10px;
+
+			}
+		}
+	}
 }
 
 #extra {
-	@include linear-gradient(to top right, transparentize($coral, 0.1), transparentize($coral, 0.1));
+	@include linear-gradient(to bottom, transparentize($coral, 0.5), transparentize($black, 0.3));
+	.section-header {
+		h1 {
+			color: $sage-light;
+		}
+		.subtitle {
+			font-family: thinUpperCases;
+			@include resp-text-size(36px);
+			color: $white;
+		}
+	}
+	.boats-div {
+		@include boats-div(white);
+	}
+	.extra-content-area {
+		padding: 15px;
+		div {
+			background: transparentize($black, .7);
+			padding: 15px;
+			width: 75%;
+			margin-top: 15px;
+			margin-bottom: 30px;
+			cursor: not-allowed;
+			&:hover {
+				border-color: transparentize($white, .5);
+				color: transparentize($white, .5);
+			}
+		}
+		p {
+			color: $white;
+		}
+	}
+}
+
+footer {
+	@include linear-gradient(to bottom, transparentize($black, 0.3), $black 65%);
 	color: $white;
+	padding-bottom: 30px;
+	.boats-div {
+		@include boats-div(white);
+		background-repeat: repeat-x;
+	}
+	.section-header h1 {
+		color: $sage-light;
+		font-family: thinUpperCases;
+		padding: 15px;
+		margin: 0;
+		@include resp-text-size(50px);
+	}
+	.contact-container {
+		padding: 15px;
+		.btn {
+			padding: 15px;
+			width: 75%;
+			margin: 10px 0;
+			&:hover {
+				background: $sage-dark;
+			}
+		}
+	}
+	.social-container {
+		padding: 15px;
+
+		/* STYLE FOR SOCIAL SHARING */
+		.social-share-btns {
+			height: 60px;
+			margin: 10px 0;
+			.icon {
+				display: inline-block;
+				height: 60px;
+				width: 60px;
+				margin: 0 15px;
+				@include background-size(contain);
+				background-repeat: no-repeat;
+				&.twitter {
+					background-image: url("../img/icon-white-twitter.png");
+					@include transition(all 1s);
+					&:hover {
+						background-image: url("../img/icon-sage-twitter.png");
+					}
+				}
+				&.facebook {
+					background-image: url("../img/icon-white-facebook.png");
+					@include transition(all 1s);
+					&:hover {
+						background-image: url("../img/icon-sage-facebook.png");
+					}					
+				}
+				&.instagram {
+					background-image: url("../img/icon-white-instagram.png");
+					@include transition(all 1s);
+					&:hover {
+						background-image: url("../img/icon-sage-instagram.png");
+					}					
+				}
+			}
+		}
+
+		/* STYLE FOR OUR SOCIAL ACCOUNTS */
+		/*
+		.social-accounts {
+			height: 40px;
+			float: right;
+			margin: 10px 0;
+			padding-right: calc(25% / 2);
+			.accounts-owner {
+				font-family: thinUpperCases;
+				@include resp-text-size(16px);
+				height: 100%;
+				padding: 10px;
+				text-align: left;
+				display: inline-block;
+				float: left;
+			}
+			.icon {
+				display: inline-block;
+				float: left;
+				height: 40px;
+				width: 40px;
+				margin-left: 30px;
+				@include background-size(contain);
+				background-repeat: no-repeat;
+				&.twitter {
+					background-image: url("../img/icon-white-twitter.png");
+				}
+				&.facebook {
+					background-image: url("../img/icon-white-facebook.png");
+				}
+				&.instagram {
+					background-image: url("../img/icon-white-instagram.png");
+				}
+			}
+		}*/
+	}
+	@import "_modal";
 }
 
 /* ---- MOBILE MEDIA QUERIES ----- */
@@ -389,6 +607,14 @@ section {
 			}
 		}
 	}
+	
+	#about {	
+		.card-info {
+			.card-section {
+				height: 400px;
+			}
+		}
+	}
 }
 
 @media (max-width: $sm-width) {
@@ -400,4 +626,21 @@ section {
 			padding-left: 0;
 		}
 	}
+	#about {
+		.avatar {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+	#extra {
+		@include linear-gradient(to bottom, transparentize($coral, 0.4), transparentize($black, 0.3) 50%);
+	}
+/*	footer {
+		.contact-container {
+			.btn {
+				height: auto;
+				margin: 0;
+			}
+		}
+	}*/
 }

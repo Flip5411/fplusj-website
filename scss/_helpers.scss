@@ -63,16 +63,10 @@
 		background: linear-gradient($args);
 	}
 
-	@mixin animation-name($name) {
-		animation-name: $name;
-		-webkit-animation-name: $name;
-		-moz-animation-name: $name;
-	}
-
-	@mixin animation-duration($time) {
-		animation-duration: $time;
-		-webkit-animation-duration: $time;
-		-moz-animation-duration: $time;
+	@mixin box-shadow($args...) {
+		box-shadow: $args;
+		-webkit-box-shadow: $args;
+		-moz-box-shadow: $args;
 	}
 
 	/*RESPONSIVE BEHAVIOR*/
@@ -117,7 +111,6 @@
 	}
 
 	@mixin default-h3($color) {
-		font-family: regularSkinnyCases;
 		font-weight: bolder;
 		color: $color;
 		text-transform: uppercase;
@@ -129,7 +122,6 @@
 	@mixin default-p($color) {
 		text-align: center;
 		color: $color;
-		font-family: regularSkinnyCases;
 		margin-bottom: 20px;
 	}
 
@@ -154,14 +146,13 @@
 
 	/*LAYOUTS*/
 	@mixin default-text-block(
-		$bgColor: transparent,
 		$h3Color: $sage-light,
 		$h3Size: 28px, 
 		$pColor: $black,
 		$pSize: 14px,
 		$aColor: $coral
 	) {
-		background: $bgColor;
+		font-family: regularSkinnyCases;
 		padding-left: 30px;
 		padding-right: 30px;
 		h3 {

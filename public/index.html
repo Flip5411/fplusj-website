@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- removed "user-scalable=no" -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="img/creamy-favicon.png">
 		<title>F + J</title>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -13,13 +13,14 @@
 			<div id="bg-img"></div>
 			<div class="container-fluid">
 				<div class="border-style">
+					<!-- title -->
 					<div class="row centered">
 							<h4 class="logo">F + J</h4>
 							<h1 class="title" id="location">Marina Del Rey, CA</h1>
 							<h1 class="title" id="date">05.20.2017</h1>
 					</div>
 					<div class="row">
-						<!-- larger width nav -->
+						<!-- larger width home -->
 						<div id="lg-nav" class="hidden-xs">
 							<div class="btn-group">
 								<a class="btn" href="#venue">Venue</a>
@@ -28,6 +29,7 @@
 								<a class="btn" href="#extra">Extra</a>
 							</div>
 						</div>
+
 						<!-- fixed large width nav -->
 						<div id="lg-nav-fixed" class="hidden-xs">
 							<a class="logo fixed" href="#home">F + J</a>
@@ -38,7 +40,8 @@
 								<a class="btn" href="#extra">Extra</a>
 							</div>
 						</div>
-						<!-- small width nav -->
+
+						<!-- small width home -->
 						<div id="sm-nav" class="visible-xs-block">
 							<div class="btn-group dropup">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -80,6 +83,7 @@
 				</div>
 				<div class="row boats-div"></div>
 				<div class="row">
+					<!-- PHOTO CAROUSEL -->
 					<div class="col-sm-6 carousel-container">
 						<div id="venue-carousel" class="carousel slide" data-ride="carousel">
 
@@ -108,6 +112,8 @@
 							</a>
 						</div>
 					</div>
+
+					<!-- VENUE INFO -->
 					<div class="col-sm-6 text-block">
 						<h3>The Venue</h3>
 						<p>Come hang out at Marina Del Rey Hotel! They got rooms with beds, a pool, boats to look at, good weather, the area is cool, beach is nearby...oh yea, we're getting married there too! It'll be pretty fun.</p>
@@ -115,12 +121,15 @@
 				</div>
 				<div class="row boats-div"></div>
 				<div class="row">
+					<!-- MAP IMAGE -->
 					<div class="col-sm-6 col-sm-push-6">
 						<div class="text-block">
 							<p><a href="https://goo.gl/maps/DeFAbvEdwNx" target="_blank">13534 Bali Way, Marina del Rey, CA 90292</a></p>
 						</div>
 						<img src="img/marina-map.jpg" class="img-responsive" />
 					</div>
+
+					<!-- BOOKING INFO -->
 					<div class="col-sm-6 col-sm-pull-6 text-block">
 						<h3>Where to Stay</h3>
 						<p>You can stay at the venue itself! We have a block reserved for guests, but space is limited, use code BLABLABLA. <a href="http://www.marinadelreyhotel.com/" target="_blank">Get a room</a>!</p>
@@ -137,6 +146,7 @@
 					</div>
 				</div>
 				<div class="row boats-div"></div>
+				<!-- CEREMONY INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/rings-icon-black.png" />
@@ -147,6 +157,8 @@
 						<p class="details">This is when we marry.</p>
 					</div>
 				</div>
+
+				<!-- COCKTAIL HOUR INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/cheers-icon-black.png" />
@@ -157,6 +169,8 @@
 						<p class="details">This is when we drink.</p>
 					</div>
 				</div>
+
+				<!-- DINNER INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/dinner-icon-black.png" />
@@ -167,6 +181,8 @@
 						<p class="details">This is when we eat.</p>
 					</div>
 				</div>
+
+				<!-- PARTY INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/music-icon-black.png" />
@@ -177,6 +193,8 @@
 						<p class="details">This is when we dance.</p>
 					</div>
 				</div>
+
+				<!-- AFTER PARTY INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/bar-icon-black.png" />
@@ -187,6 +205,8 @@
 						<p class="details">This is when we...drink and eat more?</p>
 					</div>
 				</div>
+
+				<!-- AFTER AFTER PARTY INFO -->
 				<div class="row">
 					<div class="col-xs-3 col-xs-offset-1 col-sm-2 col-sm-offset-2">
 						<img class="img-responsive" src="img/drunk-icon-black.png" />
@@ -197,33 +217,189 @@
 						<p class="details">This is when things get fuzzy...do whatever, just be safe!</p>
 					</div>
 				</div>
-				<div class="row boats-div"></div>
 			</div>
 		</section>
 		<section id="about">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
-						Justine image
-					</div>
-					<div class="col-sm-8">
-						Justine stats and bio blurb (flip card or slider)
+					<div class="section-header">
+						<h1>About Us</h1>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-4 col-sm-push-8">
-						Felipe image
+				<div class="row boats-div"></div>
+
+				<!-- JUSTINE CARD -->
+				<div id="justine-card" class="row card-container">
+					<!-- avatar -->
+					<div class="col-sm-4 avatar">
+						<img class="img-circle img-responsive center-block" src="img/justine-avatar.jpg" />
 					</div>
-					<div class="col-sm-8 col-sm-pull-4">
-						Felipe stats and bio blurb (flip card or slider)
+					<!-- card info -->
+					<div class="col-sm-8 card-info">						
+						<h2 class="card-name">Justine "J-Money" McLaughlin</h2>
+						<!-- bio section -->
+						<div class="clearfix card-section bio text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Bio</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-stats-btn">STATS <span class="glyphicon glyphicon-chevron-up"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<p>Justine is a tough cookie born and raised in South Boston, and was a big hockey player all through high school and part of college. She studied Marketing at Boston University where she and Flip met, and is now a Media Planner at a big agency. This boss lady is slowly turning into a trendy Californian.</p>
+								<p><em>Known Aliases:</em> J-Money,  Meani Justini,  Boss Bitch,  Baby Cakes</p>
+							</div>
+						</div>
+						<!-- stats section -->
+						<div class="clearfix card-section stats text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Stats</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-bio-btn">BIO <span class="glyphicon glyphicon-chevron-down"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="progress">
+									<div class="progress-bar" style="width:90%">Planning</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:70%">Knowing it all</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:30%">Patience</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:40%">Being funny</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:85%">Thinking she's funny</div>
+								</div>
+								<p><em>Special Abilities: </em> Advanced TV Knowledge,  Road Rage,  Bug Killing Bonus</p>
+								<p><em>Weaknesses: </em> Coffee, Student Loans, White Wine</p>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						Cream Cheese image
+
+				<div class="row boats-div"></div>
+
+				<!-- FELIPE CARD -->
+				<div id="felipe-card" class="row card-container">
+					<!-- avatar -->
+					<div class="col-sm-4 col-sm-push-8 avatar">
+						<img class="img-circle img-responsive center-block" src="img/felipe-avatar.jpg" />
 					</div>
-					<div class="col-sm-8">
-						Cream Cheese stats and bio blurb (flip card or slider)
+					<!-- card info -->
+					<div class="col-sm-8 col-sm-pull-4 card-info">						
+						<h2 class="card-name">Felipe "Flip" Jardim</h2>
+						<!-- bio section -->
+						<div class="clearfix card-section bio text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Bio</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-stats-btn">STATS <span class="glyphicon glyphicon-chevron-up"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<p>Felipe is a born and raised Brasilian stereotype (with an "s"). He grew up playing soccer, beaching, grilling, and drinking water from coconuts right from the tree. As you can imagine, adapting to Californian life was easy for him, despite the stresses of being the head of Product at a flourising start up.</p>
+								<p><em>Known Aliases:</em> Flip,  various pronunciations of Felipe (Fel-eep, Fel-ee-pay),  A&ccedil;a&iacute;,  Sleepy Felipy</p>
+							</div>
+						</div>
+						<!-- stats section -->
+						<div class="clearfix card-section stats text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Stats</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-bio-btn">BIO <span class="glyphicon glyphicon-chevron-down"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="progress">
+									<div class="progress-bar" style="width:70%">Beer Intelligence</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:90%">Patience</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:80%">Grilling</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:30%">Cleaning</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:100%">Thinking of a Fifth stat...nailed it</div>
+								</div>
+								<p><em>Special Abilities: </em> Enhanced Video Gaming, Wedding Site Building Bonus, Advanced Creamy Training</p>
+								<p><em>Weaknesses: </em> Cookies, Mornings, the Couch</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row boats-div"></div>
+
+				<!-- CREAMY CARD -->
+				<div id="creamy-card" class="row card-container">
+					<!-- avatar -->
+					<div class="col-sm-4 avatar">
+						<img class="img-circle img-responsive center-block" src="img/creamy-avatar.jpg" />
+					</div>
+					<!-- card info -->
+					<div class="col-sm-8 card-info">						
+						<h2 class="card-name">Cream Cheese McLaughlin-Jardim</h2>
+						<!-- bio section -->
+						<div class="clearfix card-section bio text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Bio</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-stats-btn">STATS <span class="glyphicon glyphicon-chevron-up"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<p>Historical records are limited regarding the mysterious Cream Cheese. Her true origin unknown, Creamy was first seen roaming the desert, perhaps concluding a mission of enlightenment. She started volunteering at a local shelter until she rescued Flip and Justine, who now happily benefit from rubbing Creamy's belly.</p>
+								<p><em>Known Aliases:</em> Creamy, Drooly, Chompers, Lady Cheese</p>
+							</div>
+						</div>
+						<!-- stats section -->
+						<div class="clearfix card-section stats text-block">							
+							<div class="clearfix card-section-banner">
+								<div class="col-xs-6 col-xs-push-3 card-section-title">
+									<h3>Stats</h3>
+								</div>
+								<div class="col-xs-3 col-xs-push-3 card-section-toggle">
+									<div class="show-bio-btn">BIO <span class="glyphicon glyphicon-chevron-down"></span></div>
+								</div>
+							</div>
+							<div class="clearfix">
+								<div class="progress">
+									<div class="progress-bar" style="width:100%">Drooling</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:80%">Intelligence</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:70%">Toy Destruction</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:90%">Looking Mean</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar" style="width:35%">Being Mean</div>
+								</div>
+								<p><em>Special Abilities: </em> Sit, Stay, Lay Down, Spin, Jump, Dance</p>
+								<p><em>Weaknesses: </em> Tasty Treats, Loud Noises, Prejudice</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -231,26 +407,108 @@
 		<section id="extra">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
-						<button class="btn">Gallery</button>
-						<p>one liner description</p>
+					<div class="section-header">
+						<h1>Extra Stuff</h1>
+						<h3 class="subtitle">(coming soon...)</h3>
 					</div>
-					<div class="col-sm-4">
-						<button class="btn">Playlist Collab</button>
-						<p>one liner description</p>
+				</div>
+				<div class="boats-div"></div>
+				<div class="row">
+					<div class="col-sm-4 text-block extra-content-area">
+						<div href="" class="btn">Registry</div>
+						<p>Thanks in advance for your gift! We will be putting up our Registry soon. While stuff is cool, we'll likely prefer your help in creating lasting memories, in the form of contributions to fund our honeymoon adventures! Stay tuned :-)</p>
 					</div>
-					<div class="col-sm-4">
-						<button class="btn">Something else</button>
-						<p>one liner description</p>
+					<div class="col-sm-4 text-block extra-content-area">
+						<div href="" class="btn">Gallery</div>
+						<p>If you are interested in seeing the obligatory sappy pictures of us, this is where they will go. We are still sifting through the sappiest and most flattering, so come back for those later. Pics from the wedding will likely come here too, so hopefully you'll see your pretty face in some!</p>
+					</div>
+					<div class="col-sm-4 text-block extra-content-area">
+						<div href="" class="btn">Other Stuff</div>
+						<p>We have some other fun ideas to put here to help us connect while we are far away from each other. Flip is buidling on his programming skills (made this site from scratch!), so what this is will depend on his time and abilities...and if we dont get too lazy.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 		<footer>
 			<div class="container">
+				<div class="boats-div"></div>
 				<div class="row">
-					<div class="col-sm-6">Contact info</div>
-					<div class="col-sm-6">Social</div>
+					<div class="section-header">
+						<h1>#JustineFlipsOut</h1>
+					</div>
+				</div>
+				<div class="row">
+					<!-- Social Platforms -->
+					<div class="col-sm-6 col-sm-push-6 social-container">
+						<!-- share to social --> 
+						<div class="clearfix">							
+							<div class="social-share-btns">
+								<a class="icon facebook" href="https://www.facebook.com/" target="_blank"></a>
+								<a class="icon instagram" href="https://www.instagram.com/explore/tags/justineflipsout/" target="_blank"></a>
+								<a class="icon twitter" href="http://bit.ly/2doKThd" target="_blank"></a>
+							</div>	
+						</div>
+
+						<!-- our social accounts -->
+						<!-- <div class="clearfix">
+							<div class="social-accounts">						
+								<div class="accounts-owner">Justine:</div>
+								<a class="icon facebook" href="http://facebook.com/"></a>
+								<a class="icon instagram" href="http://instagram.com/"></a>
+								<a class="icon twitter" href="http://twitter.com/"></a>
+							</div>
+						</div>
+						<div class="clearfix">							
+							<div class="social-accounts">
+								<div class="accounts-owner">Felipe:</div>
+								<a class="icon facebook" href="http://facebook.com/"></a>
+								<a class="icon instagram" href="http://instagram.com/"></a>
+								<a class="icon twitter" href="http://twitter.com/"></a>
+							</div>	
+						</div> -->
+					</div>
+
+					<!-- Contact Form -->
+					<div class="col-sm-6 col-sm-pull-6 contact-container">
+						<button class="btn" type="button" data-toggle="modal" data-target="#contact-form">Contact Us</button>
+
+						<!-- Modal -->
+						<div id="contact-form" class="modal fade" role="dialog">
+						  	<div class="modal-dialog">
+
+						    <!-- Modal content-->
+							    <div class="modal-content">
+									<div class="container-fluid" id="modal-border">
+										<h4 class="logo">F + J</h4>
+									    <div class="modal-header">
+									    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+									    	<h4 class="modal-title">Drop us a line</h4>
+									    </div>
+									    <div class="modal-body">
+									    	<form role="form">
+									    		<div class="form-group">
+									    			<label>Identify yourself!</label>
+									    			<input type="text" id="form-name" class="form-control" placeholder="Name" required>
+									    			<label>Electronic-mail</label>
+									    			<input type="email" id="form-email" class="form-control" placeholder="name@email.com" required>
+									    			<label>Subject</label>
+									    			<input type="text" id="form-subject" class="form-control" placeholder="Email Subject line" required>
+									    			<label>What's up?</label>									    			
+									    			<textarea id="form-body" rows="10" class="form-control" placeholder="Your email content, like: Hi Flip and Justine, you guys are so awesome I just had to tell you..." required ></textarea>	    		
+									    		</div>
+									    	</form>
+									    </div>
+									    <div class="modal-footer row">
+									    	<p id="user-feedback" class="col-sm-8"></p>
+									    	<button type="button" id="send-btn" class="btn" data-dismiss="">Send</button>
+									    </div>
+									    <h4 class="footer-tag">#JustineFlipsOut</h4>
+									</div>
+							    </div>
+
+						  	</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>
