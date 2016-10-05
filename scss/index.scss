@@ -490,7 +490,7 @@ footer {
 		font-family: thinUpperCases;
 		padding: 15px;
 		margin: 0;
-		@include resp-text-size(50px);
+		@include resp-title-size(75px);
 	}
 	.contact-container {
 		padding: 15px;

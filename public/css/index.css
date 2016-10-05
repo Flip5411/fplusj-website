@@ -648,16 +648,22 @@ footer {
     font-family: thinUpperCases;
     padding: 15px;
     margin: 0;
-    font-size: 50px; }
+    font-size: 75px; }
     @media (min-width: 1201px) {
       footer .section-header h1 {
-        font-size: 60px; } }
+        font-size: 90px; } }
     @media (max-width: 1200px) {
       footer .section-header h1 {
-        font-size: 55px; } }
+        font-size: 82.5px; } }
     @media (max-width: 992px) {
       footer .section-header h1 {
-        font-size: 50px; } }
+        font-size: 75px; } }
+    @media (max-width: 768px) {
+      footer .section-header h1 {
+        font-size: 56.25px; } }
+    @media (max-width: 480px) {
+      footer .section-header h1 {
+        font-size: 37.5px; } }
   footer .contact-container {
     padding: 15px; }
     footer .contact-container .btn {
@@ -760,19 +766,21 @@ footer {
       footer #contact-form .modal-content .modal-header {
         border: none;
         border-top: 2px solid #9A9899; }
-        footer #contact-form .modal-content .modal-header h4 {
+        footer #contact-form .modal-content .modal-header .modal-title {
           font-family: fadedBlockStyle;
           color: #FF776F;
+          text-align: center;
           text-transform: uppercase;
+          padding: 0 5%;
           font-size: 35px; }
           @media (min-width: 1201px) {
-            footer #contact-form .modal-content .modal-header h4 {
+            footer #contact-form .modal-content .modal-header .modal-title {
               font-size: 42px; } }
           @media (max-width: 1200px) {
-            footer #contact-form .modal-content .modal-header h4 {
+            footer #contact-form .modal-content .modal-header .modal-title {
               font-size: 38.5px; } }
           @media (max-width: 992px) {
-            footer #contact-form .modal-content .modal-header h4 {
+            footer #contact-form .modal-content .modal-header .modal-title {
               font-size: 35px; } }
       footer #contact-form .modal-content button.close {
         position: relative;
@@ -781,25 +789,27 @@ footer {
         top: -60px;
         right: -20px;
         opacity: 1; }
-      footer #contact-form .modal-content .modal-body label {
-        font-family: thinUpperCases;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-bottom: 0;
-        padding: 5px;
-        float: left; }
-        @media (min-width: 1201px) {
-          footer #contact-form .modal-content .modal-body label {
-            font-size: 24px; } }
-        @media (max-width: 1200px) {
-          footer #contact-form .modal-content .modal-body label {
-            font-size: 22px; } }
-        @media (max-width: 992px) {
-          footer #contact-form .modal-content .modal-body label {
-            font-size: 20px; } }
-      footer #contact-form .modal-content .modal-body .form-control {
-        background-color: #F3F0F0;
-        border-radius: 0; }
+      footer #contact-form .modal-content .modal-body {
+        padding-bottom: 0; }
+        footer #contact-form .modal-content .modal-body label {
+          font-family: thinUpperCases;
+          font-size: 20px;
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding: 5px;
+          float: left; }
+          @media (min-width: 1201px) {
+            footer #contact-form .modal-content .modal-body label {
+              font-size: 24px; } }
+          @media (max-width: 1200px) {
+            footer #contact-form .modal-content .modal-body label {
+              font-size: 22px; } }
+          @media (max-width: 992px) {
+            footer #contact-form .modal-content .modal-body label {
+              font-size: 20px; } }
+        footer #contact-form .modal-content .modal-body .form-control {
+          background-color: #F3F0F0;
+          border-radius: 0; }
       footer #contact-form .modal-content .modal-footer {
         border: none; }
         footer #contact-form .modal-content .modal-footer #user-feedback {

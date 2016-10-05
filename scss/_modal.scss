@@ -15,10 +15,12 @@
 		.modal-header {
 			border: none;
 			border-top: 2px solid $gray;
-			h4 {
+			.modal-title {
 				font-family: fadedBlockStyle;
 				color: $coral;
+				text-align: center;
 				text-transform: uppercase;
+				padding: 0 5%;
 				@include resp-text-size(35px);
 			}
 		}
@@ -31,6 +33,7 @@
 			opacity: 1;
 		}
 		.modal-body {
+			padding-bottom: 0;
 			label {
 				font-family: thinUpperCases;
 				@include resp-text-size(20px);
