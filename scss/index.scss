@@ -41,6 +41,12 @@ section {
 	@include default-text-block;
 }
 
+.fade-in-text, .fade-in-block {
+	position: relative;
+	opacity: 0;
+	bottom: -100px;
+}
+
 /* ---- HOME SECTION ----- */
 
 #home {
@@ -276,20 +282,41 @@ section {
 		}
 	}
 
-	#hashtag {
+	#hashtag-area {
 		position: absolute;
 		margin: 0;
-		padding-top: 150px;
+		padding-top: 160px;
 		color: $white;
 		text-align: center;
 		width: 100%;
 		bottom: 0;
-		font: {
-			family: thinUpperCases;
-			weight: bold;
-			size: 25px;
+		@include linear-gradient(to top, transparentize($black, 0.5) 30%, transparentize($white, 1));
+		font-weight: bold;
+		h4 {
+			font-size: 25px;
+			font-family: thinUpperCases;
 		}
-		@include linear-gradient(to top, transparentize($black, 0.5), transparentize($white, 1));
+		.countdown {
+			.count-area {
+				display: inline-block;
+				margin-bottom: 10px;
+				div {
+					display: inline-block;
+					&.count-number {
+						font-size: 30px;
+						border-bottom: 1px solid $white;
+						border-right: 1px solid $white;
+						padding-right: 5px;
+						color: $sage-light;
+					}
+					&.count-label {
+						font-size: 18px;
+						margin-right: 15px;
+						color: $coral;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -492,6 +519,27 @@ footer {
 		margin: 0;
 		@include resp-title-size(75px);
 	}
+	.countdown {
+		.count-area {
+			display: inline-block;
+			margin-bottom: 10px;
+			div {
+				display: inline-block;
+				&.count-number {
+					font-size: 30px;
+					border-bottom: 1px solid $white;
+					border-right: 1px solid $white;
+					padding-right: 5px;
+					color: $sage-light;
+				}
+				&.count-label {
+					font-size: 18px;
+					margin-right: 15px;
+					color: $coral;
+				}
+			}
+		}
+	}
 	.contact-container {
 		padding: 15px;
 		.btn {
@@ -592,7 +640,7 @@ footer {
 			height: 100%;
 			margin: 0;
 		}
-		#hashtag {
+		#hashtag-area {
 			padding-bottom: 10px;
 		}
 	}

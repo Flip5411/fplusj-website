@@ -125,6 +125,11 @@ section {
       color: #d50c00;
       cursor: pointer; }
 
+.fade-in-text, .fade-in-block {
+  position: relative;
+  opacity: 0;
+  bottom: -100px; }
+
 /* ---- HOME SECTION ----- */
 #home {
   height: 100%;
@@ -341,21 +346,37 @@ section {
       color: #F3F0F0;
       background: #FF776F;
       text-decoration: none; }
-  #home #hashtag {
+  #home #hashtag-area {
     position: absolute;
     margin: 0;
-    padding-top: 150px;
+    padding-top: 160px;
     color: #F3F0F0;
     text-align: center;
     width: 100%;
     bottom: 0;
-    font-family: thinUpperCases;
-    font-weight: bold;
-    font-size: 25px;
-    background: -webkit-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
-    background: -o-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
-    background: -moz-linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0));
-    background: linear-gradient(to top, rgba(65, 65, 67, 0.5), rgba(243, 240, 240, 0)); }
+    background: -webkit-linear-gradient(to top, rgba(65, 65, 67, 0.5) 30%, rgba(243, 240, 240, 0));
+    background: -o-linear-gradient(to top, rgba(65, 65, 67, 0.5) 30%, rgba(243, 240, 240, 0));
+    background: -moz-linear-gradient(to top, rgba(65, 65, 67, 0.5) 30%, rgba(243, 240, 240, 0));
+    background: linear-gradient(to top, rgba(65, 65, 67, 0.5) 30%, rgba(243, 240, 240, 0));
+    font-weight: bold; }
+    #home #hashtag-area h4 {
+      font-size: 25px;
+      font-family: thinUpperCases; }
+    #home #hashtag-area .countdown .count-area {
+      display: inline-block;
+      margin-bottom: 10px; }
+      #home #hashtag-area .countdown .count-area div {
+        display: inline-block; }
+        #home #hashtag-area .countdown .count-area div.count-number {
+          font-size: 30px;
+          border-bottom: 1px solid #F3F0F0;
+          border-right: 1px solid #F3F0F0;
+          padding-right: 5px;
+          color: #9ACEC1; }
+        #home #hashtag-area .countdown .count-area div.count-label {
+          font-size: 18px;
+          margin-right: 15px;
+          color: #FF776F; }
 
 /* ---- VENUE SECTION ----- */
 #venue {
@@ -664,6 +685,21 @@ footer {
     @media (max-width: 480px) {
       footer .section-header h1 {
         font-size: 37.5px; } }
+  footer .countdown .count-area {
+    display: inline-block;
+    margin-bottom: 10px; }
+    footer .countdown .count-area div {
+      display: inline-block; }
+      footer .countdown .count-area div.count-number {
+        font-size: 30px;
+        border-bottom: 1px solid #F3F0F0;
+        border-right: 1px solid #F3F0F0;
+        padding-right: 5px;
+        color: #9ACEC1; }
+      footer .countdown .count-area div.count-label {
+        font-size: 18px;
+        margin-right: 15px;
+        color: #FF776F; }
   footer .contact-container {
     padding: 15px; }
     footer .contact-container .btn {
@@ -814,11 +850,20 @@ footer {
         border: none; }
         footer #contact-form .modal-content .modal-footer #user-feedback {
           text-align: left;
+          padding: 0;
+          margin: 10px 0;
           display: none; }
           footer #contact-form .modal-content .modal-footer #user-feedback.negative {
             color: #FF776F; }
           footer #contact-form .modal-content .modal-footer #user-feedback.positive {
             color: #9ACEC1; }
+          footer #contact-form .modal-content .modal-footer #user-feedback a {
+            color: #FF776F;
+            text-decoration: underline; }
+            footer #contact-form .modal-content .modal-footer #user-feedback a:hover {
+              text-decoration: none;
+              color: #d50c00;
+              cursor: pointer; }
         footer #contact-form .modal-content .modal-footer #send-btn {
           padding: 10px 60px;
           width: auto; }
@@ -866,7 +911,7 @@ footer {
     border: none;
     height: 100%;
     margin: 0; }
-  #home #hashtag {
+  #home #hashtag-area {
     padding-bottom: 10px; }
   #program .text-block h3 {
     margin: 0; }

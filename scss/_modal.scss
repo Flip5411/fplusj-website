@@ -51,12 +51,18 @@
 			border: none;
 			#user-feedback {
 				text-align: left;
+				padding: 0;
+				margin: 10px 0;
 				display: none;
 				&.negative {
 					color: $coral;
 				}
 				&.positive {
 					color: $sage-light;
+				}
+				a {
+					@include default-a($coral);
+					text-decoration: underline;
 				}
 			}
 			#send-btn {
