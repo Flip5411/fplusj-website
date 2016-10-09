@@ -42,7 +42,7 @@ app.post("/sendEmail", function(req, res) {
 	);
 
 	// test sending data back to client
-	// res.send(email);
+	res.send(email);
 
 	// smtpTransport.sendMail(mailData, function(error, smtpRes) {
 	// 	console.log("code in sendMail hit:");
