@@ -9,9 +9,6 @@ $(document).ready(function() {
 	var elemBottom;
 	var windowBottom;
 
-	// countdown
-	var timeLeft;
-
 	// forms
 	var userFeedback = $("#user-feedback");
 	var sendBtn = $("#send-btn");
@@ -19,20 +16,34 @@ $(document).ready(function() {
 // --- FUNCTIONS ----
 
 	// CLOCK COUNTDOWN
-	// countdown
 	function countdown() {
-		var now = Date.now();
-		var endDate = new Date("May 20 2017 18:30:00 PDT").getTime();
-		var milliseconds = endDate - now;
-		timeLeft = {
-			seconds: Math.floor((milliseconds / 1000) % 60),
-			minutes: Math.floor((milliseconds / 1000 / 60) % 60),
-			hours: Math.floor((milliseconds / 1000 / 60 / 60) % 24),
-			days: Math.floor(milliseconds / 1000 / 60 / 60 / 24)
-		}
+		var timeDiff;
+		var intervalCount = setInterval(function() {
+			var now = Date.now();
+			var endDate = new Date("May 20 2017 18:30:00 PDT").getTime();
+			timeDiff = endDate - now;
+			var timeLeft = {
+				seconds: Math.floor((timeDiff / 1000) % 60),
+				minutes: Math.floor((timeDiff / 1000 / 60) % 60),
+				hours: Math.floor((timeDiff / 1000 / 60 / 60) % 24),
+				days: Math.floor(timeDiff / 1000 / 60 / 60 / 24)
+			}
 
-		// display each number in it's approprite place
-		// update the numbers every second
+			$(".countdown .days").html(function() {
+				if (timeLeft.days < 10) {
+					return ("0" + timeLeft.days).slice(-2);
+				} else {
+					return timeLeft.days;
+				}
+			});
+			$(".countdown .hours").html(("0" + timeLeft.hours).slice(-2));
+			$(".countdown .minutes").html(("0" + timeLeft.minutes).slice(-2));
+			$(".countdown .seconds").html(("0" + timeLeft.seconds).slice(-2));
+		});
+
+		if (timeDiff <= 0) {
+			clearInterval(intervalCount);
+		}
 	}
 
 	// FADE IN PARALLAX EFFECT
@@ -209,13 +220,7 @@ $(document).ready(function() {
 	toggleNav();
 	replaceFixedBg();
 	setTimeout(function() {fadeInContent()}, 1000);
-	setInterval(function() {
-		countdown();
-		$(".countdown .days").html(timeLeft.days);
-		$(".countdown .hours").html(timeLeft.hours);
-		$(".countdown .minutes").html(timeLeft.minutes);
-		$(".countdown .seconds").html(timeLeft.seconds);
-	}, 1000);
+	countdown();
 
 	// set nav, backgrounds, and fade-ins on scroll
 	$(document).scroll(function() {
