@@ -39,7 +39,7 @@ $(document).ready(function() {
 			$(".countdown .hours").html(("0" + timeLeft.hours).slice(-2));
 			$(".countdown .minutes").html(("0" + timeLeft.minutes).slice(-2));
 			$(".countdown .seconds").html(("0" + timeLeft.seconds).slice(-2));
-		});
+		}, 1000);
 
 		if (timeDiff <= 0) {
 			clearInterval(intervalCount);
@@ -188,10 +188,10 @@ $(document).ready(function() {
 			userFeedback.html("");
 			userFeedback.removeClass("positive");
 			userFeedback.addClass("negative");
-			setTimeout(function() {
+			setTimeout(function() { 
 				userFeedback.html("Uh oh, you didn't fill out the form properly...it's ok, forms are hard...");
 				userFeedback.css("display", "block");
-			}, 100);
+			}, 100); //this will make it seem like something changed even if you get the same message twice
 			console.log("Invalid form");
 		}
 
