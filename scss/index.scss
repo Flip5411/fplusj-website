@@ -104,6 +104,69 @@ section {
 		top: 35%;
 		@include resp-title-size(36px);
 	}
+	.addtocalendar {
+		position: relative;
+		bottom: 0;
+		color: $black;
+	    display: inline-block;
+   		background: transparent!important;
+		var {
+		    display: none;
+		}
+		img {
+			width: 32px;
+		}
+		.atcb-link {
+			background: transparent;
+			box-shadow: none;
+			padding: 0;
+		    display: block;
+		    outline: none!important;
+		    cursor: pointer;
+		    &:focus~ul, &:active~ul, &:hover{
+			    visibility:visible;
+			}
+		}
+		.atcb-list {
+			font-size: 14px;
+		    display: none;
+		    position: absolute;
+		    width: 170px;
+		    z-index: 900;
+			letter-spacing: normal;
+			background-color: $white;
+			border: 5px solid $white;
+			left: -69px;
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+	        box-shadow: 0 0 5px #AAA;
+			.atcb-item {
+			    list-style: none;
+			    margin: 0;
+			    padding: 0;
+		        float: none;
+				a {
+					color: $black;
+					font-family: regularSkinnyCases;
+					padding: 12px 0;
+					text-align: center;
+					text-decoration: none;
+					&:hover {
+						color: $white;
+						background-color: $sage-light;
+						@include transition(.5s all);
+					}
+				}
+			}
+		}
+		.atcb-item-link {
+		    text-decoration: none;
+		    outline: none;
+		    display: block;
+		}
+	}
+
 	#lg-nav.fade-in-block {
 		bottom: 0;
 	}
@@ -691,6 +754,17 @@ footer {
 }
 
 @media (max-width: $sm-width) {
+	#home {
+		.addtocalendar {
+			img {
+				width: 24px;
+			}
+			.atcb-list {
+				left: -154px;
+			}
+		}
+	}
+
 	#venue {
 		.carousel-container {
 			padding-right: 0;

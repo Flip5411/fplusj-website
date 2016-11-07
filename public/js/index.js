@@ -216,6 +216,18 @@ $(document).ready(function() {
 		}, 1000);
 	});	
 
+	// add to calendar list toggle
+	$(".addtocalendar").click(function(event) {
+		event.stopPropagation();
+		$(".atcb-list").toggle();
+	});
+	$(document).click(function() {
+		if (!$(this).hasClass(".atcb-list")) {
+			$(".atcb-list").hide();
+			console.log("clicked outside list");
+		}
+	});
+
 	// set nav, backgrounds, and fade-ins on load
 	toggleNav();
 	replaceFixedBg();

@@ -8,7 +8,7 @@ $(document).ready(function() {
  				    	'<button type="button" class="close" data-dismiss="modal">&times;</button>' +
 				    '</div>' +
 				    '<div class="modal-body">' +
- 				    	'<a href="http://justineflipsout.splashthat.com">' +
+ 				    	'<a href="http://justineflipsout.splashthat.com" target="_blank">' +
 	 				    	'<img class="full-flyer" src="img/engagement-party-flyer.png">' +
 	 				    '</a>' +
 				    '</div>' +

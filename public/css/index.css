@@ -192,6 +192,59 @@ section {
     @media (max-width: 480px) {
       #home .title {
         font-size: 18px; } }
+  #home .addtocalendar {
+    position: relative;
+    bottom: 0;
+    color: #414143;
+    display: inline-block;
+    background: transparent !important; }
+    #home .addtocalendar var {
+      display: none; }
+    #home .addtocalendar img {
+      width: 32px; }
+    #home .addtocalendar .atcb-link {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      display: block;
+      outline: none !important;
+      cursor: pointer; }
+      #home .addtocalendar .atcb-link:focus ~ ul, #home .addtocalendar .atcb-link:active ~ ul, #home .addtocalendar .atcb-link:hover {
+        visibility: visible; }
+    #home .addtocalendar .atcb-list {
+      font-size: 14px;
+      display: none;
+      position: absolute;
+      width: 170px;
+      z-index: 900;
+      letter-spacing: normal;
+      background-color: #F3F0F0;
+      border: 5px solid #F3F0F0;
+      left: -69px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 0 5px #AAA; }
+      #home .addtocalendar .atcb-list .atcb-item {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: none; }
+        #home .addtocalendar .atcb-list .atcb-item a {
+          color: #414143;
+          font-family: regularSkinnyCases;
+          padding: 12px 0;
+          text-align: center;
+          text-decoration: none; }
+          #home .addtocalendar .atcb-list .atcb-item a:hover {
+            color: #F3F0F0;
+            background-color: #9ACEC1;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all; }
+    #home .addtocalendar .atcb-item-link {
+      text-decoration: none;
+      outline: none;
+      display: block; }
   #home #lg-nav.fade-in-block {
     bottom: 0; }
   #home .btn-group {
@@ -1029,6 +1082,10 @@ footer {
     font-size: 14px; } }
 
 @media (max-width: 768px) {
+  #home .addtocalendar img {
+    width: 24px; }
+  #home .addtocalendar .atcb-list {
+    left: -154px; }
   #venue .carousel-container {
     padding-right: 0; }
   #venue .img-responsive {
