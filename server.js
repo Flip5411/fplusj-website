@@ -5,13 +5,13 @@ var PORT = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 	//email SMTP
 var nodemailer = require("nodemailer");
-// var smtpTransport = nodemailer.createTransport({
-// 	service: "Gmail",
-// 	auth: {
-// 		user: "fplusj.2017@gmail.com",
-// 		pass: "tresleches1101"
-// 	}
-// });
+var smtpTransport = nodemailer.createTransport({
+	service: "Gmail",
+	auth: {
+		user: "fplusj.2017@gmail.com",
+		pass: "tresleches1101"
+	}
+});
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,7 +30,7 @@ app.post("/sendEmail", function(req, res) {
 		to: "FplusJ2017@gmail.com",
 		replyTo: email.sender,
 		subject: email.subject,
-		message: "Message from: " + email.name +
+		text: "Message from: " + email.name +
 			"\n\n" + email.message
 	};
 	// testing if i created the mailData properly in server
@@ -38,23 +38,19 @@ app.post("/sendEmail", function(req, res) {
 		"to: " + mailData.to +
 		"\nreply to: " + mailData.replyTo +
 		"\nsubject: " + mailData.subject +
-		"\nmessage: " + mailData.message
+		"\nmessage: " + mailData.text
 	);
 
-	// test sending data back to client
-	res.send(email);
-
-	// smtpTransport.sendMail(mailData, function(error, smtpRes) {
-	// 	console.log("code in sendMail hit:");
-	// 	console.log(mailData);
-	// 	if (error) {
-	// 		console.log("Error trying to send email");
-	// 		res.send("error");
-	// 	} else {
-	// 		console.log("Email sent!");
-	// 		res.send(email);
-	// 	}
-	// });
+	smtpTransport.sendMail(mailData, function(error, smtpRes) {
+		console.log("code in sendMail hit:");
+		if (error) {
+			console.log("Error trying to send email");
+			res.send("error");
+		} else {
+			console.log("Email sent!");
+			res.send(email);
+		}
+	});
 });
 
 // Redirects

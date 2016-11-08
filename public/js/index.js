@@ -200,7 +200,7 @@ $(document).ready(function() {
 			console.log("Form is valid!");
 			acceptForm();
 		} else {
-			console.log("Form is invalid!");
+			console.log("Form is NOT valid!");
 			rejectForm();
 		}
 
@@ -224,7 +224,6 @@ $(document).ready(function() {
 	$(document).click(function() {
 		if (!$(this).hasClass(".atcb-list")) {
 			$(".atcb-list").hide();
-			console.log("clicked outside list");
 		}
 	});
 
