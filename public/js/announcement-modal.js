@@ -9,7 +9,7 @@ $(document).ready(function() {
 				    '</div>' +
 				    '<div class="modal-body">' +
  				    	'<a href="http://justineflipsout.splashthat.com" target="_blank">' +
-	 				    	'<img class="full-flyer" src="img/engagement-party-flyer.png">' +
+	 				    	'<img class="full-flyer" src="img/engagement-party-flyer.jpg">' +
 	 				    '</a>' +
 				    '</div>' +
 			    '</div>' +
