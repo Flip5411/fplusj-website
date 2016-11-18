@@ -694,19 +694,6 @@ section {
   background: linear-gradient(to bottom, rgba(255, 119, 111, 0.5), rgba(65, 65, 67, 0.7)); }
   #extra .section-header h1 {
     color: #9ACEC1; }
-  #extra .section-header .subtitle {
-    font-family: thinUpperCases;
-    font-size: 36px;
-    color: #F3F0F0; }
-    @media (min-width: 1201px) {
-      #extra .section-header .subtitle {
-        font-size: 43.2px; } }
-    @media (max-width: 1200px) {
-      #extra .section-header .subtitle {
-        font-size: 39.6px; } }
-    @media (max-width: 992px) {
-      #extra .section-header .subtitle {
-        font-size: 36px; } }
   #extra .boats-div {
     background-image: url("../img/boats-divider-white.png");
     -webkit-background-size: auto 100%;
@@ -720,16 +707,22 @@ section {
     width: 100%; }
   #extra .extra-content-area {
     padding: 15px; }
-    #extra .extra-content-area div {
+    #extra .extra-content-area .btn {
       background: rgba(65, 65, 67, 0.3);
       padding: 15px;
       width: 75%;
       margin-top: 15px;
       margin-bottom: 30px;
-      cursor: not-allowed; }
-      #extra .extra-content-area div:hover {
-        border-color: rgba(243, 240, 240, 0.5);
-        color: rgba(243, 240, 240, 0.5); }
+      color: #F3F0F0; }
+      #extra .extra-content-area .btn.active {
+        cursor: pointer; }
+        #extra .extra-content-area .btn.active:hover {
+          background-color: #68968E; }
+      #extra .extra-content-area .btn.inactive {
+        cursor: not-allowed; }
+        #extra .extra-content-area .btn.inactive:hover {
+          border-color: rgba(243, 240, 240, 0.5);
+          color: rgba(243, 240, 240, 0.5); }
     #extra .extra-content-area p {
       color: #F3F0F0; }
 

@@ -545,27 +545,33 @@ section {
 		h1 {
 			color: $sage-light;
 		}
-		.subtitle {
-			font-family: thinUpperCases;
-			@include resp-text-size(36px);
-			color: $white;
-		}
 	}
 	.boats-div {
 		@include boats-div(white);
 	}
 	.extra-content-area {
 		padding: 15px;
-		div {
+		.btn {
 			background: transparentize($black, .7);
 			padding: 15px;
 			width: 75%;
 			margin-top: 15px;
 			margin-bottom: 30px;
-			cursor: not-allowed;
-			&:hover {
-				border-color: transparentize($white, .5);
-				color: transparentize($white, .5);
+			color: $white;
+			
+			&.active {
+				cursor: pointer;
+				&:hover {
+					background-color: $sage-dark;
+				}
+			}
+			
+			&.inactive {
+				cursor: not-allowed;
+				&:hover {
+					border-color: transparentize($white, .5);
+					color: transparentize($white, .5);
+				}
 			}
 		}
 		p {
