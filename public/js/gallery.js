@@ -1,13 +1,11 @@
-$(document).ready(function() {
+window.onload = function() {
 	
 	// MASONRY SETUP
 	function masonryInit() {
-		$(".grid").imagesLoaded(function() {
-			$(".grid").masonry({
-				itemSelector: ".grid-item",
-				columnWidth: ".grid-sizer",
-				percentPosition: true
-			});
+		$(".grid").masonry({
+			itemSelector: ".grid-item",
+			columnWidth: ".grid-sizer",
+			percentPosition: true
 		});
 	}
 
@@ -56,4 +54,4 @@ $(document).ready(function() {
 		$("#gallery-photos ." + sectionName + " .grid-item:nth-child(2)").css({"opacity": "1"});
 	});
 
-});
+}

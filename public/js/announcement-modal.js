@@ -19,5 +19,5 @@ $(document).ready(function() {
 	setTimeout(function() {
 		$("#announcement-container").html(modal_content);
 		$("#announcement-modal").modal("show");
-	}, 5000);
+	}, 1000);
 });

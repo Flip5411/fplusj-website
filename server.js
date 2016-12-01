@@ -54,6 +54,8 @@ app.post("/sendEmail", function(req, res) {
 });
 
 // Redirects
+app.use('/gallery', express.static(__dirname + "/public/gallery.html"));
+
 app.get('/*', function(req, res){
   res.redirect("/");
 });
