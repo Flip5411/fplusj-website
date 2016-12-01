@@ -53,7 +53,7 @@ $(document).ready(function() {
 			elemBottom = $(this).offset().top + $(this).outerHeight() - 75;
 			windowBottom = $(window).scrollTop() + $(window).height();
 			if (elemBottom < windowBottom) {
-				$(this).animate({"opacity": "1", bottom: "0"}, 750, "swing");
+				$(this).animate({"opacity": "1", "bottom": "0"}, 750, "swing");
 			}
 		});
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
 			elemBottom = $(this).offset().top + $(this).outerHeight()/2 - 75;
 			windowBottom = $(window).scrollTop() + $(window).height();
 			if (elemBottom < windowBottom) {
-				$(this).animate({"opacity": "1", bottom: "0"}, 750, "swing");
+				$(this).animate({"opacity": "1", "bottom": "0"}, 750, "swing");
 			}
 		});
 
