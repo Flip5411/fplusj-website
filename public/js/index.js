@@ -68,8 +68,8 @@ $(document).ready(function() {
 
 		// change fade behavior of certain elements for mobile
 		if ($(window).width() < 768) {
-			$("#extra .row").removeClass("fade-in-block");
-			$(".extra-content-area").addClass("fade-in-block");
+			$("#more .row").removeClass("fade-in-block");
+			$(".more-content-area").addClass("fade-in-block");
 		}
 	}
 
@@ -104,7 +104,7 @@ $(document).ready(function() {
 		}
 	}
 
-	function extraBgPic() {
+	function moreBgPic() {
 		if (window.innerWidth > 768) {
 			return {
 				"background-image": "url(img/couple-carousel.jpg)",
@@ -126,7 +126,7 @@ $(document).ready(function() {
 		if (window.scrollY >= venuePosition && window.scrollY < aboutPosition) {
 			$("#bg-img").css(programBgPic());
 		} else if (window.scrollY >= aboutPosition) {
-			$("#bg-img").css(extraBgPic());
+			$("#bg-img").css(moreBgPic());
 		} else {
 			$("#bg-img").css("background-image", "url(img/marina-resized.jpg)");
 		}
@@ -188,7 +188,7 @@ $(document).ready(function() {
 			userFeedback.html("");
 			userFeedback.removeClass("positive");
 			userFeedback.addClass("negative");
-			setTimeout(function() { 
+			setTimeout(function() {
 				userFeedback.html("Uh oh, you didn't fill out the form properly...it's ok, forms are hard...");
 				userFeedback.css("display", "block");
 			}, 100); //this will make it seem like something changed even if you get the same message twice
@@ -206,7 +206,7 @@ $(document).ready(function() {
 
 	}
 
-// ---- EVENTS ---- 
+// ---- EVENTS ----
 	// nav click scroll control
 	$("#home a").click(function() {
 		var linkDest = $(this).attr("href");
@@ -214,7 +214,7 @@ $(document).ready(function() {
 		$("html, body").animate({
 			scrollTop: destPosition.top - navHeight
 		}, 1000);
-	});	
+	});
 
 	// add to calendar list toggle
 	$(".addtocalendar").click(function(event) {
@@ -250,17 +250,17 @@ $(document).ready(function() {
 	// toggle between stat and bio cards
 		//justine
 	$("#justine-card .show-stats-btn, #justine-card .show-bio-btn").click(function() {
-		$("#justine-card .bio").slideToggle();		
+		$("#justine-card .bio").slideToggle();
 		$("#justine-card .stats").slideToggle();
 	});
 		//felipe
 	$("#felipe-card .show-stats-btn, #felipe-card .show-bio-btn").click(function() {
-		$("#felipe-card .bio").slideToggle();		
+		$("#felipe-card .bio").slideToggle();
 		$("#felipe-card .stats").slideToggle();
 	});
 		//creamy
 	$("#creamy-card .show-stats-btn, #creamy-card .show-bio-btn").click(function() {
-		$("#creamy-card .bio").slideToggle();		
+		$("#creamy-card .bio").slideToggle();
 		$("#creamy-card .stats").slideToggle();
 	});
 
@@ -273,8 +273,3 @@ $(document).ready(function() {
 	});
 
 });
-
-
-
-
-
