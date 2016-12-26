@@ -5,11 +5,17 @@ var PORT = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 	//email SMTP
 var nodemailer = require("nodemailer");
+var xoauth2 = require("xoauth2");
 var smtpTransport = nodemailer.createTransport({
 	service: "Gmail",
 	auth: {
-		user: "fplusj.2017@gmail.com",
-		pass: "tresleches1101"
+		xoauth2: xoauth2.createXOAuth2Generator({
+			user: "fplusj.2017@gmail.com",
+			clientId: "351820011831-3m1lk9finvrb8rdkcna1kqp9ud1i5644.apps.googleusercontent.com",
+		    clientSecret: "l4fC5RMfMM694zeRTFZdSA4E",
+		    refreshToken: "1/xHEhIQ3zQIJdjmHoMKoDD37x5nkObRVd5wT7Lmm6FXRf5dj-1WBmfB0oBWs-nQKR",
+			accessToken: "ya29.Ci_AAwCV9dl7HgdWlndHR5Gjssqk-5eG2sIa1bWQ2-jMfMoq1AfrHjGnUl8NeKrvYQ"
+		})
 	}
 });
 
@@ -25,7 +31,7 @@ app.post("/sendEmail", function(req, res) {
 	var email = req.body;
 	// testing if i got the right info from client
 	console.log("Server got: " + email);
-	
+
 	var mailData = {
 		to: "FplusJ2017@gmail.com",
 		replyTo: email.sender,
