@@ -197,6 +197,7 @@ section {
 	left: 0;
 	z-index: 10;
 	border-radius: 0;
+	border: 0;
 	box-shadow: 3px 0 5px #414143;
 	-webkit-box-shadow: 3px 0 5px #414143;
 	-moz-box-shadow: 3px 0 5px #414143;
