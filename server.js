@@ -14,7 +14,6 @@ var smtpTransport = nodemailer.createTransport({
 			clientId: "351820011831-3m1lk9finvrb8rdkcna1kqp9ud1i5644.apps.googleusercontent.com",
 		    clientSecret: "l4fC5RMfMM694zeRTFZdSA4E",
 		    refreshToken: "1/xHEhIQ3zQIJdjmHoMKoDD37x5nkObRVd5wT7Lmm6FXRf5dj-1WBmfB0oBWs-nQKR",
-			accessToken: "ya29.Ci_AAwCV9dl7HgdWlndHR5Gjssqk-5eG2sIa1bWQ2-jMfMoq1AfrHjGnUl8NeKrvYQ"
 		})
 	}
 });

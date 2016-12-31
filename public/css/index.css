@@ -933,6 +933,7 @@ section {
 #about .card-info .card-section .card-section-banner .card-section-title {
 	padding: 0;
 	border-bottom: 2px solid #9A9899;
+	border-right: 2px solid #9A9899;
 }
 
 #about .card-info .card-section .card-section-banner .card-section-title h3 {
