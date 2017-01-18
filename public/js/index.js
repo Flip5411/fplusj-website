@@ -164,7 +164,7 @@ $(document).ready(function() {
 			userFeedback.html("Sending email, please wait...");
 
 			// send email
-			$.post("sendemail", email, function(data) {
+			$.post("sendemail/", email, function(data) {
 				if (data === "error") {
 					// error message
 					userFeedback.removeClass("positive");
