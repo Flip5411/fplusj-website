@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use("/", express.static(__dirname + "/public"));
 
 // grab content from contact form and send email
-app.post("/sendEmail", function(req, res) {
+app.post("/sendemail", function(req, res) {
 	var email = req.body;
 	// testing if i got the right info from client
 	console.log("Server got: " + email);
