@@ -45,7 +45,7 @@ app.post("/sendEmail", function(req, res) {
 		"\nsubject: " + mailData.subject +
 		"\nmessage: " + mailData.text
 	);
-
+console.log('DELETE ME SEND MAIL >>>>> ', mailData)
 	smtpTransport.sendMail(mailData, function(error, smtpRes) {
 		console.log("code in sendMail hit:");
 		if (error) {
