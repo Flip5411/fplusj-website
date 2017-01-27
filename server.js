@@ -29,7 +29,7 @@ app.use("/", express.static(__dirname + "/public"));
 app.post("/sendemail/", function(req, res) {
 	var email = req.body;
 	// testing if i got the right info from client
-	console.log("Server got: " + email);
+	console.log("Server got: ", email);
 
 	var mailData = {
 		to: "FplusJ2017@gmail.com",
