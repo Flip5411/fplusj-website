@@ -74,7 +74,7 @@ app.get("/rsvp/responses", function(req, res) {
 		res.json(rsvps);
 	}, function (e) {
 		console.log("hit db.rsvp.findAll error in GET")
-		res.status(500).send()
+		res.status(500).send();
 	});
 });
 
@@ -91,7 +91,7 @@ app.post("/rsvp/responses", function(req, res) {
 		res.json(rsvp.toJSON());
 	}, function (e) {
 		console.log("hit db.rsvp.create error in POST")
-		res.status(400).json(e);
+		res.status(400).send('error');
 	});
 
 	// send email as backup
