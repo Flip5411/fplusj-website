@@ -179,7 +179,7 @@ section {
 			font-size: 20px;
 			float: none;
 			width: 20%;
-			padding: 2% 0;
+			padding: 12px 0;
 			background: transparentize($black, 0.3);
 			&:hover {
 				background: $sage-dark;
@@ -224,7 +224,7 @@ section {
 		bottom: 0;
 		.btn {
 			width: 45%;
-			padding: 2% 0;
+			padding: 12px 0;
 		}
 		.open>.btn-default:focus {
 			border-color: $white;
@@ -668,42 +668,6 @@ footer {
 				}
 			}
 		}
-
-		/* STYLE FOR OUR SOCIAL ACCOUNTS */
-		/*
-		.social-accounts {
-			height: 40px;
-			float: right;
-			margin: 10px 0;
-			padding-right: calc(25% / 2);
-			.accounts-owner {
-				font-family: thinUpperCases;
-				@include resp-text-size(16px);
-				height: 100%;
-				padding: 10px;
-				text-align: left;
-				display: inline-block;
-				float: left;
-			}
-			.icon {
-				display: inline-block;
-				float: left;
-				height: 40px;
-				width: 40px;
-				margin-left: 30px;
-				@include background-size(contain);
-				background-repeat: no-repeat;
-				&.twitter {
-					background-image: url("../img/icon-white-twitter.png");
-				}
-				&.facebook {
-					background-image: url("../img/icon-white-facebook.png");
-				}
-				&.instagram {
-					background-image: url("../img/icon-white-instagram.png");
-				}
-			}
-		}*/
 	}
 }
 
@@ -789,12 +753,4 @@ footer {
 	#more {
 		@include linear-gradient(to bottom, transparentize($coral, 0.4), transparentize($black, 0.3) 50%);
 	}
-/*	footer {
-		.contact-container {
-			.btn {
-				height: auto;
-				margin: 0;
-			}
-		}
-	}*/
 }

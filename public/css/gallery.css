@@ -26,6 +26,11 @@
 	font-weight: bold;
 }
 
+@font-face {
+	font-family: handwriting;
+	src: url(../fonts/hoffm___.ttf);
+}
+
 /*FREQUENT VALUES*/
 /* ---- MIXINS ---- */
 /*COMPATIBILITY TIME SAVERS*/
@@ -211,7 +216,7 @@ section {
 }
 
 #nav .navbar .btn-group .btn {
-	padding: 2% 0;
+	padding: 12px 0;
 	float: left;
 	height: 100%;
 	border: none;

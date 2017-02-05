@@ -1,0 +1,384 @@
+@import "_helpers";
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+body {
+	background-color: $white;
+	height: 100%;
+	min-height: $xs-width - $nav-height;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-family: regularSkinnyCases;
+	*[class*="col-"] {
+		padding: 30px 0;
+	}
+}
+
+section {
+	padding-bottom: 30px;
+}
+
+.btn, .btn:focus, .btn:active, .btn:hover {
+	@include default-btn($white);
+}
+
+.section-header > h1 {
+	@include default-h1($coral);
+	@include resp-title-size(100px);
+}
+
+.text-block {
+	@include default-text-block;
+}
+
+/* ---- NAV SECTION ---- */
+
+#nav {
+	padding-bottom: 0;
+	/* FIXED NAV */
+	.navbar {
+		position: fixed;
+		height: $nav-height;
+		@include transition(all 0.5s);
+		width: 100%;
+		background: $white;
+		left: 0;
+		z-index: 10;
+		border-radius: 0;
+		border: 0;
+		@include box-shadow(3px 0 5px $black);
+		.btn-group {
+			height: 100%;
+			margin: 0;
+			float: right;
+			margin-right: 30px;
+			.btn {
+				padding: 12px 0;
+				float: left;
+				height: 100%;
+				border: none;
+				background: transparent;
+				font-size: 20px;
+				color: $black;
+				&:hover {
+					background: $sage-light;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	#lg-nav-fixed {
+		.btn-group {
+			width: 60%;
+			.btn {
+				width: 25%;
+			}
+		}
+	}
+
+	#sm-nav-fixed {
+		.btn-group {
+			width: 45%;
+		}
+		.open>.btn-default:focus {
+			border-color: $white;
+			color: $white;
+			background: $sage-dark;
+		}
+		.caret {
+			border: {
+				left: 8px solid transparent;
+				right: 8px solid transparent;
+				bottom: 8px solid transparent;
+				top: 8px solid $white;
+			}
+			margin-top: 8px;
+			float: right;
+			margin-right: 5%;
+		}
+		.btn {
+			width: 100%;
+		}
+		.dropdown-menu {
+			text-transform: uppercase;
+			margin: 0 auto;
+			padding: 0;
+			width: 45%;
+			right: 0;
+			text-align: center;
+			background: $white;
+			border: 5px solid $white;
+			border-radius: 0;
+			a {
+				padding: 12px 0;
+				color: $black;
+				@include transition(all 0.6s);
+				&:hover {
+					background: $sage-light;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	.logo {
+		font: {
+			family: fadedBlockStyle;
+			size: 20px;
+			weight: 400;
+		}
+		&.fixed {
+			position: fixed;
+			@include transition(all 0.5s);
+			left: 0;
+			height: $nav-height;
+			z-index: 10;
+			margin: 0;
+			padding: 12px 30px; /* remaining space between font size and nav height */
+			color: $black;
+			&:hover {
+				@include transition(all 0.6s);
+				color: $white;
+				background: $coral;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* ---- CONTENT ---- */
+
+#rsvp {
+	#nav-space {
+		height: $nav-height;
+	}
+	.boats-div {
+		@include boats-div(sage);
+	}
+	.title-area {
+		h1 {
+			@include resp-title-size(80px);
+		}
+	}
+	.text-block {
+		margin-bottom: 30px;
+		p {
+			font-size: 16px;
+			a > span {
+				text-decoration: underline;
+			}
+			@media (max-width: $xs-width) {
+				font-size: 13px;
+			}
+		}
+	}
+
+	.form-area {
+		@media (max-width: $xs-width) {
+			font-size: 12px;
+		}
+		color: $black;
+		.row {
+			padding: 0 15px;
+		}
+
+		.form-control {
+			font-family: handwriting;
+			font-size: 30px;
+			letter-spacing: 1px;
+			background-color: transparent;
+			box-shadow: none;
+			border: none;
+			border-radius: 0;
+			border-bottom: 1px solid $black;
+			color: $coral;
+			@media (max-width: $xs-width) {
+				font-size: 20px;
+			}
+		}
+
+		.form-names-area {
+			max-width: 700px;
+			padding-right: 45px;
+			@media (max-width: $sm-width) {
+				padding-right: 15px;
+			}
+			@media (max-width: $xs-width) {
+				padding: 0;
+			}
+			.name-label {
+				padding: 10px 0;
+				margin: 0;
+				margin-right: 15px;
+				float: right;
+				@media (max-width: $xs-width) {
+					padding-top: 15px;
+					padding-bottom: 0;
+				}
+			}
+			p {
+				margin-top: 5px;
+				margin-bottom: 0;
+				font-size: 12px;
+				@media (max-width: $xs-width) {
+					font-size: 10px;
+				}
+			}
+			.name-input {
+				padding: 0;
+			}
+		}
+
+		.form-radio-area {
+			padding: 0;
+			*[class^="col-"] {
+				padding: 0;
+			}
+			.radio-selector {
+				float: right;
+				width: 40px;
+				height: 40px;
+				border-bottom: 1px solid $black;
+				margin-top: 10px;
+				margin-right: 10px;
+				margin-bottom: 30px;
+				font-family: handwriting;
+				color: $coral;
+				font-size: 42px;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			.radio-label {
+				float: left;
+				padding-top: 30px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.form-entrees-area {
+			display: none;
+			*[class^="col-"] {
+				padding: 0;
+			}
+			input[type=number]::-webkit-inner-spin-button,
+			input[type=number]::-webkit-outer-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			div:first-child > .entree-label {
+				float: none;
+				@media (max-width: $sm-width) {
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
+			}
+			.entree-input {
+				float: right;
+				width: 40px;
+				height: 40px;
+				margin-top: 10px;
+				margin-right: 10px;
+				margin-bottom: 30px;
+				padding-top: 20px;
+				@media (max-width: $sm-width) {
+					margin-bottom: 0;
+				}
+				&:required:invalid, &:focus:invalid {
+					background-image: url(../img/exclamationmark.png);
+					background-position: 99% 2px;
+					background-repeat: no-repeat;
+					background-size: 15px;
+					-moz-box-shadow: none;
+				}
+			}
+			.entree-label {
+				padding: 30px 0;
+				float: left;
+				p {
+					padding: 0;
+					margin: 0;
+					font-size: 12px;
+					@media (max-width: $xs-width) {
+						font-size: 10px;
+					}
+				}
+				@media (max-width: $sm-width) {
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		.form-song-area {
+			.song-label {
+				padding-top: 30px;
+				@media (max-width: $sm-width) {
+					padding-top: 60px;
+				}
+			}
+			p {
+				font-size: 12px;
+				@media (max-width: $xs-width) {
+					font-size: 10px;
+				}
+			}
+			.song-input {
+				text-align: center;
+			}
+		}
+
+		.form-btn-area {
+			margin-top: 60px;
+			#user-feedback {
+				height: 30px;
+				color: $coral;
+				a {
+					@include default-a($coral);
+					text-decoration: underline;
+				}
+				&.positive {
+					color: $sage-dark;
+				}
+			}
+			.btn {
+				@include default-btn($black);
+				padding: 20px 75px;
+				font-size: 20px;
+				cursor: not-allowed;
+				&:focus, &:active, &:hover {
+					border-color: transparentize($black, .5);
+					color: transparentize($black, .5);
+					background-color: transparentize($coral, .5);
+				}
+				&.active {
+					box-shadow: none;
+					cursor: pointer;
+					&:focus, &:active, &:hover {
+						background-color: $sage-light;
+						color: $white;
+						border-color: transparentize($white, 1);
+						@include transition(1s all);
+					}
+				}
+				&.submitted {
+					cursor: not-allowed;
+					background-color: $sage-light;
+					color: $white;
+					border-color: transparentize($white, 1);
+				}
+			}
+		}
+	}
+}

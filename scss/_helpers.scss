@@ -34,6 +34,11 @@
 		font-weight: bold;
 	}
 
+	@font-face {
+		font-family: handwriting;
+		src: url(../fonts/hoffm___.ttf);
+	}
+
 	/*FREQUENT VALUES*/
 	$nav-height: 50px;
 	$xs-width: 480px;
@@ -42,7 +47,7 @@
 	$lg-width: 1200px;
 
 /* ---- MIXINS ---- */
-	
+
 	/*COMPATIBILITY TIME SAVERS*/
 	@mixin background-size($val) {
 		-webkit-background-size: $val;
@@ -147,7 +152,7 @@
 	/*LAYOUTS*/
 	@mixin default-text-block(
 		$h3Color: $sage-light,
-		$h3Size: 28px, 
+		$h3Size: 28px,
 		$pColor: $black,
 		$pSize: 14px,
 		$aColor: $coral
@@ -170,14 +175,10 @@
 
 	@mixin boats-div($colorRef) {
 		background-image: url("../img/boats-divider-#{$colorRef}.png");
-		@include background-size(auto 100%); 
+		@include background-size(auto 100%);
 		background-repeat: no-repeat;
 		background-position: center;
 		margin: 30px 0;
 		height: 30px;
 		width: 100%;
 	}
-
-
-
-

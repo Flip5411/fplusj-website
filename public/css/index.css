@@ -26,6 +26,11 @@
 	font-weight: bold;
 }
 
+@font-face {
+	font-family: handwriting;
+	src: url(../fonts/hoffm___.ttf);
+}
+
 /*FREQUENT VALUES*/
 /* ---- MIXINS ---- */
 /*COMPATIBILITY TIME SAVERS*/
@@ -366,7 +371,7 @@ section {
 	font-size: 20px;
 	float: none;
 	width: 20%;
-	padding: 2% 0;
+	padding: 12px 0;
 	background: rgba(65, 65, 67, 0.7);
 }
 
@@ -419,7 +424,7 @@ section {
 
 #home #sm-nav .btn {
 	width: 45%;
-	padding: 2% 0;
+	padding: 12px 0;
 }
 
 #home #sm-nav .open > .btn-default:focus {
@@ -1228,41 +1233,6 @@ footer .contact-container .btn:hover {
 footer .social-container {
 	padding: 15px;
 	/* STYLE FOR SOCIAL SHARING */
-	/* STYLE FOR OUR SOCIAL ACCOUNTS */
-	/*
-		.social-accounts {
-			height: 40px;
-			float: right;
-			margin: 10px 0;
-			padding-right: calc(25% / 2);
-			.accounts-owner {
-				font-family: thinUpperCases;
-				@include resp-text-size(16px);
-				height: 100%;
-				padding: 10px;
-				text-align: left;
-				display: inline-block;
-				float: left;
-			}
-			.icon {
-				display: inline-block;
-				float: left;
-				height: 40px;
-				width: 40px;
-				margin-left: 30px;
-				@include background-size(contain);
-				background-repeat: no-repeat;
-				&.twitter {
-					background-image: url("../img/icon-white-twitter.png");
-				}
-				&.facebook {
-					background-image: url("../img/icon-white-facebook.png");
-				}
-				&.instagram {
-					background-image: url("../img/icon-white-instagram.png");
-				}
-			}
-		}*/
 }
 
 footer .social-container .social-share-btns {
@@ -1641,12 +1611,4 @@ footer .social-container .social-share-btns .icon.instagram:hover {
 		background: -moz-linear-gradient(to bottom, rgba(255, 119, 111, 0.6), rgba(65, 65, 67, 0.7) 50%);
 		background: linear-gradient(to bottom, rgba(255, 119, 111, 0.6), rgba(65, 65, 67, 0.7) 50%);
 	}
-	/*	footer {
-		.contact-container {
-			.btn {
-				height: auto;
-				margin: 0;
-			}
-		}
-	}*/
 }
