@@ -27,11 +27,11 @@ app.use(bodyParser.json());
 // Main route
 app.use("/", express.static(__dirname + "/public"));
 
-// grab content from contact form and send email
+// API REQUESTS
+// POST /sendemail --> grab content from contact form and send email
 app.post("/sendemail/", function(req, res) {
 	var email = req.body;
-	// testing if i got the right info from client
-	console.log("Server got: ", email);
+	console.log("Server got: ", email); // testing if i got the right info from client
 
 	var mailData = {
 		to: "FplusJ2017@gmail.com",
@@ -40,16 +40,9 @@ app.post("/sendemail/", function(req, res) {
 		text: "Message from: " + email.name +
 			"\n\n" + email.message
 	};
-	// testing if i created the mailData properly in server
-	console.log(
-		"to: " + mailData.to +
-		"\nreply to: " + mailData.replyTo +
-		"\nsubject: " + mailData.subject +
-		"\nmessage: " + mailData.text
-	);
 
 	smtpTransport.sendMail(mailData, function(error, smtpRes) {
-		console.log("code in sendMail hit:");
+		console.log("sendMail hit for contact form:");
 		if (error) {
 			console.log("Error trying to send email");
 			res.send("error");
@@ -60,14 +53,7 @@ app.post("/sendemail/", function(req, res) {
 	});
 });
 
-// Gallery route
-app.use('/gallery', express.static(__dirname + "/public/gallery.html"));
-
-// RSVP route
-app.use('/RSVP', express.static(__dirname + "/public/rsvp.html"));
-
-// API REQUESTS
-//GET /rsvp
+//GET /rsvp --> retrieve all stored rsvp info
 app.get("/rsvp/responses", function(req, res) {
 	db.rsvp.findAll().then(function (rsvps) {
 		console.log("hit db.rsvp.findAll success in GET")
@@ -78,47 +64,49 @@ app.get("/rsvp/responses", function(req, res) {
 	});
 });
 
-// POST /rsvp --> receive rsvp info from user
+// POST /rsvp --> create a new rsvp record from user
 app.post("/rsvp/responses", function(req, res) {
 	var rsvp = req.body;
 
-	// testing if i got the right info from client
-	console.log("Server got: ", rsvp);
-
-	// store rsvp to database
-	db.rsvp.create(rsvp).then(function (rsvp) {
-		console.log("hit db.rsvp.create success in POST")
-		res.json(rsvp.toJSON());
-	}, function (e) {
-		console.log("hit db.rsvp.create error in POST")
-		res.status(400).send('error');
-	});
-
-	// send email as backup
+	console.log("Server got: ", rsvp); // testing if i got the right info from client
+	// back up email setup
 	var mailData = {
 		to: "FplusJ2017@gmail.com",
 		subject: "New RSVP received: " + rsvp.name.substr(0, rsvp.name.indexOf(' ')),
 		text: "RSVP info: " +
-			"\n\nName(s): " + rsvp.name +
-			"\nAttending: " + rsvp.attending +
-			"\nEntree Choice(s): " +
-			"\nBeef: " + rsvp.beef +
-			"\nFish: " + rsvp.fish +
-			"\nPasta: " + rsvp.pasta +
-			"\nSong(s): " + rsvp.song
+		"\n\nName(s): " + rsvp.name +
+		"\nAttending: " + rsvp.attending +
+		"\nEntree Choice(s): " +
+		"\nBeef: " + rsvp.beef +
+		"\nFish: " + rsvp.fish +
+		"\nPasta: " + rsvp.pasta +
+		"\nSong(s): " + rsvp.song
 	};
-	smtpTransport.sendMail(mailData, function(error, smtpRes) {
-		console.log("code in sendMail hit:");
-		if (error) {
-			console.log("Error trying to send rsvp");
-			res.send("error");
-		} else {
-			console.log("Email sent!");
-			res.send(rsvp);
-		}
+
+	// store rsvp to database, then send it via email
+	db.rsvp.create(rsvp).then(function (rsvp) {
+		console.log("hit db.rsvp.create success in POST")
+		return rsvp;
+	}, function (e) {
+		console.log("hit db.rsvp.create error in POST")
+		res.send('error');
+	}).then(function (rsvp) {
+		smtpTransport.sendMail(mailData, function(error, smtpRes) {
+			console.log("sendMail hit for RSVP:");
+			if (error) {
+				console.log("Error trying to send rsvp email");
+				res.send("error");
+			} else {
+				console.log("Email sent!");
+				res.send(rsvp);
+			}
+		});
 	});
 });
 
+// ROUTES
+app.use('/gallery', express.static(__dirname + "/public/gallery.html"));
+app.use('/RSVP', express.static(__dirname + "/public/rsvp.html"));
 // redirects
 app.get('/*', function(req, res){
 	res.redirect("/");
