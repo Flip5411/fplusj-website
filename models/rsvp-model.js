@@ -7,16 +7,20 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN
         },
         beef: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         fish: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         pasta: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         song: {
-            type: DataTypes.TEXT
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     });
 };
