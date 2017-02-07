@@ -99,7 +99,7 @@ app.post("/rsvp/responses", function(req, res) {
 		});
 	}, function (e) {
 		console.log("hit db.rsvp.create error in POST")
-		res.status(500).send('database error could not create record' + e);
+		res.status(500).send('error');
 	});
 });
 
@@ -112,7 +112,7 @@ app.get('/*', function(req, res){
 });
 
 // sync database and run server
-db.sequelize.sync({force:true}).then(function () {
+db.sequelize.sync().then(function () {
 	app.listen(PORT, function () {
 		console.log("Express server running on: " + PORT + " ...fplusj is up...");
 	});
