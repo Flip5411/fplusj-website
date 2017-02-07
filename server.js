@@ -90,7 +90,7 @@ app.post("/rsvp/responses", function(req, res) {
 			console.log("sendMail hit for RSVP:");
 			if (error) {
 				console.log("Error trying to send rsvp email");
-				res.send("error");
+				res.status(500).send("error sending email");
 			} else {
 				console.log("Email sent!");
 				res.send(rsvp);
@@ -98,7 +98,7 @@ app.post("/rsvp/responses", function(req, res) {
 		});
 	}, function (e) {
 		console.log("hit db.rsvp.create error in POST")
-		res.send('error');
+		res.status(500).send('error creating database record');
 	});
 });
 
