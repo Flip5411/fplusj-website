@@ -90,7 +90,7 @@ app.post("/rsvp/responses", function(req, res) {
 			console.log("sendMail hit for RSVP:");
 			if (error) {
 				console.log("Error trying to send rsvp email");
-				res.status(500).send("error sending email");
+				res.status(500).send("error");
 			} else {
 				console.log("Email sent!");
 				res.send(rsvp);
@@ -98,7 +98,7 @@ app.post("/rsvp/responses", function(req, res) {
 		});
 	}, function (e) {
 		console.log("hit db.rsvp.create error in POST")
-		res.status(500).send('error creating database record');
+		res.status(500).send('error');
 	});
 });
 
@@ -111,7 +111,7 @@ app.get('/*', function(req, res){
 });
 
 // sync database and run server
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force:true}).then(function () {
 	app.listen(PORT, function () {
 		console.log("Express server running on: " + PORT + " ...fplusj is up...");
 	});
