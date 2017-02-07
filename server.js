@@ -84,7 +84,8 @@ app.post("/rsvp/responses", function(req, res) {
 	};
 
 	// store rsvp to database, then send it via email
-	db.rsvp.create(rsvp).then(function (rsvp) {
+	db.rsvp.create(rsvp)
+	.then((rsvp) => {
 		console.log("hit db.rsvp.create success in POST")
 		smtpTransport.sendMail(mailData, function(error, smtpRes) {
 			console.log("sendMail hit for RSVP:");
