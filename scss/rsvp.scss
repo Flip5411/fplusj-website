@@ -180,7 +180,10 @@ section {
 				text-decoration: underline;
 			}
 			@media (max-width: $xs-width) {
-				font-size: 13px;
+				font-size: 14px;
+			}
+			@media (min-width: $md-width) {
+				font-size: 18px;
 			}
 		}
 	}
@@ -188,6 +191,9 @@ section {
 	.form-area {
 		@media (max-width: $xs-width) {
 			font-size: 12px;
+		}
+		@media (min-width: $md-width) {
+			font-size: 16px;
 		}
 		color: $black;
 		.row {

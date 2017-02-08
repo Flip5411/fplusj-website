@@ -378,7 +378,13 @@ section {
 
 @media (max-width: 480px) {
 	#rsvp .text-block p {
-		font-size: 13px;
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 992px) {
+	#rsvp .text-block p {
+		font-size: 18px;
 	}
 }
 
@@ -389,6 +395,12 @@ section {
 @media (max-width: 480px) {
 	#rsvp .form-area {
 		font-size: 12px;
+	}
+}
+
+@media (min-width: 992px) {
+	#rsvp .form-area {
+		font-size: 16px;
 	}
 }
 
