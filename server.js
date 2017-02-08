@@ -91,15 +91,15 @@ app.post("/rsvp/responses", function(req, res) {
 			console.log("sendMail hit for RSVP:");
 			if (error) {
 				console.log("Error trying to send rsvp email");
-				res.status(500).send("error");
+				res.send("error");
 			} else {
 				console.log("Email sent!");
 				res.send(rsvp);
 			}
 		});
 	}, function (e) {
-		console.log("hit db.rsvp.create error in POST", e)
-		res.status(500).send(e);
+		console.log("hit db.rsvp.create error in POST: " + e)
+		res.send("error");
 	});
 });
 

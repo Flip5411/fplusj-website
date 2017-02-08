@@ -24,9 +24,9 @@ $(document).ready(function() {
         } else {
             rsvp.attending = undefined;
         }
-        rsvp.beef = formBeef.val(),
-        rsvp.fish = formFish.val(),
-        rsvp.pasta = formPasta.val(),
+        rsvp.beef = formBeef.val();
+        rsvp.fish = formFish.val();
+        rsvp.pasta = formPasta.val();
         rsvp.song = formSong.val();
         console.log(rsvp);
     }
@@ -109,7 +109,7 @@ $(document).ready(function() {
                     // error message
                     userFeedback.removeClass('positive');
                     userFeedback.html("Hmmm, something messed up...oh well, just email us directly at <a href='mailto:FplusJ.2017@gmail.com'>FplusJ.2017@gmail.com</a>.");
-                    console.log("Got an error back from server!",serverData);
+                    console.log("Got an error back from server!", serverData);
                 } else {
                     // success message
                     userFeedback.addClass('positive');
