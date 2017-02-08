@@ -109,7 +109,7 @@ $(document).ready(function() {
                     // error message
                     userFeedback.removeClass('positive');
                     userFeedback.html("Hmmm, something messed up...oh well, just email us directly at <a href='mailto:FplusJ.2017@gmail.com'>FplusJ.2017@gmail.com</a>.");
-                    console.log("Got an error back from server!");
+                    console.log("Got an error back from server!",serverData);
                 } else {
                     // success message
                     userFeedback.addClass('positive');
@@ -118,7 +118,7 @@ $(document).ready(function() {
                     } else {
                         userFeedback.html("Awww, too bad you can't make it " + serverData.name.substr(0, serverData.name.indexOf(' ')) + ". That's ok though, let's keep in touch :)");
                     }
-                    console.log("Server got the rsvp info!");
+                    console.log("Server got the rsvp info!", serverData);
                 }
             });
 

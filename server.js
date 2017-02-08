@@ -99,7 +99,7 @@ app.post("/rsvp/responses", function(req, res) {
 		});
 	}, function (e) {
 		console.log("hit db.rsvp.create error in POST")
-		res.status(500).send('error');
+		res.status(500).send(e);
 	});
 });
 
