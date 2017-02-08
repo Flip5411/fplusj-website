@@ -17,6 +17,7 @@ $(document).ready(function() {
     var rsvp = {};
     function getFormValues () {
         rsvp.name = formName.val();
+
         if (formAttending.html() && !formNotAttending.html()) {
             rsvp.attending = true;
         } else if (!formAttending.html() && formNotAttending.html()) {
@@ -24,9 +25,21 @@ $(document).ready(function() {
         } else {
             rsvp.attending = undefined;
         }
-        rsvp.beef = parseInt(formBeef.val());
-        rsvp.fish = parseInt(formFish.val());
-        rsvp.pasta = parseInt(formPasta.val());
+
+        function convertToNum (formField) {
+            var numberValue = parseInt(formField);
+            if (isNaN(numberValue)) {
+                console.log("should return 0");
+                return 0;
+            } else {
+                console.log("should return a number");
+                return numberValue;
+            }
+        }
+        rsvp.beef = convertToNum(formBeef.val());
+        rsvp.fish = convertToNum(formFish.val());
+        rsvp.pasta = convertToNum(formPasta.val());
+
         rsvp.song = formSong.val();
         console.log(rsvp);
     }
