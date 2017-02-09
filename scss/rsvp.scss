@@ -196,10 +196,27 @@ section {
 			font-size: 16px;
 		}
 		color: $black;
+		.form-title {
+			font-family: fadedBlockStyle;
+			color: $sage-light;
+			@include resp-text-size(28px);
+			margin-bottom: 0;
+			margin-top: 10px;
+			@media (max-width: $xs-width) {
+				margin-top: 30px;
+			}
+		}
 		.row {
 			padding: 0 15px;
 		}
-
+		.form-group {
+			padding: 30px;
+			box-shadow: 3px 3px 10px $black;
+			@media (max-width: $xs-width) {
+				padding: 0;
+				box-shadow: none;
+			}
+		}
 		.form-control {
 			font-family: handwriting;
 			font-size: 30px;
@@ -342,11 +359,12 @@ section {
 			}
 			.song-input {
 				text-align: center;
+				margin-bottom: 15px;
 			}
 		}
 
 		.form-btn-area {
-			margin-top: 60px;
+			margin-top: 40px;
 			#user-feedback {
 				height: 30px;
 				color: $coral;

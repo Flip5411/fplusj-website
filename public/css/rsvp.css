@@ -404,8 +404,52 @@ section {
 	}
 }
 
+#rsvp .form-area .form-title {
+	font-family: fadedBlockStyle;
+	color: #9ACEC1;
+	font-size: 28px;
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+@media (min-width: 1201px) {
+	#rsvp .form-area .form-title {
+		font-size: 33.6px;
+	}
+}
+
+@media (max-width: 1200px) {
+	#rsvp .form-area .form-title {
+		font-size: 30.8px;
+	}
+}
+
+@media (max-width: 992px) {
+	#rsvp .form-area .form-title {
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 480px) {
+	#rsvp .form-area .form-title {
+		margin-top: 30px;
+	}
+}
+
 #rsvp .form-area .row {
 	padding: 0 15px;
+}
+
+#rsvp .form-area .form-group {
+	padding: 30px;
+	box-shadow: 3px 3px 10px #414143;
+}
+
+@media (max-width: 480px) {
+	#rsvp .form-area .form-group {
+		padding: 0;
+		box-shadow: none;
+	}
 }
 
 #rsvp .form-area .form-control {
@@ -598,10 +642,11 @@ section {
 
 #rsvp .form-area .form-song-area .song-input {
 	text-align: center;
+	margin-bottom: 15px;
 }
 
 #rsvp .form-area .form-btn-area {
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
 #rsvp .form-area .form-btn-area #user-feedback {
