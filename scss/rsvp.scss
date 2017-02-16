@@ -315,9 +315,10 @@ section {
 				margin-top: 10px;
 				margin-right: 10px;
 				margin-bottom: 30px;
-				padding-top: 10px;
+				padding-top: 20px;
 				@media (max-width: $sm-width) {
 					margin-bottom: 0;
+					padding-top: 10px;
 				}
 				&:required:invalid, &:focus:invalid {
 					background-image: url(../img/exclamationmark.png);
