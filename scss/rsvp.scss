@@ -219,7 +219,7 @@ section {
 		}
 		.form-control {
 			font-family: handwriting;
-			font-size: 30px;
+			font-size: 24px;
 			letter-spacing: 1px;
 			background-color: transparent;
 			box-shadow: none;
@@ -227,6 +227,9 @@ section {
 			border-radius: 0;
 			border-bottom: 1px solid $black;
 			color: $coral;
+			@media (min-width: $lg-width) {
+				font-size: 30px;
+			}
 			@media (max-width: $xs-width) {
 				font-size: 20px;
 			}
