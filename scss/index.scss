@@ -581,6 +581,9 @@ section {
 		}
 		p {
 			color: $white;
+			em {
+				color: $sage-light;
+			}
 		}
 	}
 }

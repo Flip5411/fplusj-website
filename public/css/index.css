@@ -1096,6 +1096,10 @@ section {
 	color: #F3F0F0;
 }
 
+#more .more-content-area p em {
+	color: #9ACEC1;
+}
+
 footer {
 	background: -webkit-linear-gradient(to bottom, rgba(65, 65, 67, 0.7), #414143 65%);
 	background: -o-linear-gradient(to bottom, rgba(65, 65, 67, 0.7), #414143 65%);
